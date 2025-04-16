@@ -1,7 +1,7 @@
 {
   "version": 4,
   "terraform_version": "1.9.7",
-  "serial": 52,
+  "serial": 107,
   "lineage": "6befeca8-61c6-52e8-6446-fd3143e5d61d",
   "outputs": {},
   "resources": [
@@ -174,6 +174,529 @@
       ]
     },
     {
+      "module": "module.Vms",
+      "mode": "managed",
+      "type": "azurerm_linux_virtual_machine",
+      "name": "anssible01vm",
+      "provider": "provider[\"registry.terraform.io/hashicorp/azurerm\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "additional_capabilities": [],
+            "admin_password": "@demopassword123",
+            "admin_ssh_key": [],
+            "admin_username": "demoadmin",
+            "allow_extension_operations": true,
+            "availability_set_id": "",
+            "boot_diagnostics": [],
+            "computer_name": "anssible01vm",
+            "custom_data": null,
+            "dedicated_host_group_id": "",
+            "dedicated_host_id": "",
+            "disable_password_authentication": false,
+            "edge_zone": "",
+            "encryption_at_host_enabled": false,
+            "eviction_policy": "",
+            "extensions_time_budget": "PT1H30M",
+            "id": "/subscriptions/3e55e921-1317-405e-9b21-3a5455dac609/resourceGroups/westEurope01rg/providers/Microsoft.Compute/virtualMachines/anssible01vm",
+            "identity": [],
+            "license_type": "",
+            "location": "westeurope",
+            "max_bid_price": -1,
+            "name": "anssible01vm",
+            "network_interface_ids": [
+              "/subscriptions/3e55e921-1317-405e-9b21-3a5455dac609/resourceGroups/westEurope01rg/providers/Microsoft.Network/networkInterfaces/ansible01NI"
+            ],
+            "os_disk": [
+              {
+                "caching": "ReadWrite",
+                "diff_disk_settings": [],
+                "disk_encryption_set_id": "",
+                "disk_size_gb": 30,
+                "name": "anssible01vm_disk1_6eb5ea5244084ff3902856d39fe8234b",
+                "storage_account_type": "Standard_LRS",
+                "write_accelerator_enabled": false
+              }
+            ],
+            "patch_mode": "ImageDefault",
+            "plan": [],
+            "platform_fault_domain": -1,
+            "priority": "Regular",
+            "private_ip_address": "172.0.1.5",
+            "private_ip_addresses": [
+              "172.0.1.5"
+            ],
+            "provision_vm_agent": true,
+            "proximity_placement_group_id": "",
+            "public_ip_address": "13.80.240.71",
+            "public_ip_addresses": [
+              "13.80.240.71"
+            ],
+            "resource_group_name": "westEurope01rg",
+            "secret": [],
+            "secure_boot_enabled": false,
+            "size": "Standard_B1s",
+            "source_image_id": "",
+            "source_image_reference": [
+              {
+                "offer": "0001-com-ubuntu-server-jammy",
+                "publisher": "Canonical",
+                "sku": "22_04-lts",
+                "version": "latest"
+              }
+            ],
+            "tags": null,
+            "termination_notification": null,
+            "timeouts": null,
+            "user_data": "",
+            "virtual_machine_id": "2c176c08-2079-46c4-8592-9f66a06ff9bb",
+            "virtual_machine_scale_set_id": "",
+            "vtpm_enabled": false,
+            "zone": ""
+          },
+          "sensitive_attributes": [
+            [
+              {
+                "type": "get_attr",
+                "value": "admin_password"
+              }
+            ],
+            [
+              {
+                "type": "get_attr",
+                "value": "custom_data"
+              }
+            ]
+          ],
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoyNzAwMDAwMDAwMDAwLCJkZWxldGUiOjI3MDAwMDAwMDAwMDAsInJlYWQiOjMwMDAwMDAwMDAwMCwidXBkYXRlIjoyNzAwMDAwMDAwMDAwfX0=",
+          "dependencies": [
+            "module.Resource_Group.azurerm_resource_group.Hub01RG",
+            "module.Subnet.azurerm_subnet.ansible01Subnet",
+            "module.Vnet.azurerm_virtual_network.westEurope01Vnet",
+            "module.nic.azurerm_network_interface.ansible01NI",
+            "module.nic.azurerm_public_ip.ansilbe01PIP"
+          ]
+        }
+      ]
+    },
+    {
+      "module": "module.Vms",
+      "mode": "managed",
+      "type": "azurerm_linux_virtual_machine",
+      "name": "webapp01vm",
+      "provider": "provider[\"registry.terraform.io/hashicorp/azurerm\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "additional_capabilities": [],
+            "admin_password": "@demopassword123",
+            "admin_ssh_key": [],
+            "admin_username": "demoadmin",
+            "allow_extension_operations": true,
+            "availability_set_id": "",
+            "boot_diagnostics": [],
+            "computer_name": "webapp01vm",
+            "custom_data": null,
+            "dedicated_host_group_id": "",
+            "dedicated_host_id": "",
+            "disable_password_authentication": false,
+            "edge_zone": "",
+            "encryption_at_host_enabled": false,
+            "eviction_policy": "",
+            "extensions_time_budget": "PT1H30M",
+            "id": "/subscriptions/3e55e921-1317-405e-9b21-3a5455dac609/resourceGroups/france01RG/providers/Microsoft.Compute/virtualMachines/webapp01vm",
+            "identity": [],
+            "license_type": "",
+            "location": "francecentral",
+            "max_bid_price": -1,
+            "name": "webapp01vm",
+            "network_interface_ids": [
+              "/subscriptions/3e55e921-1317-405e-9b21-3a5455dac609/resourceGroups/france01RG/providers/Microsoft.Network/networkInterfaces/webapp01NI"
+            ],
+            "os_disk": [
+              {
+                "caching": "ReadWrite",
+                "diff_disk_settings": [],
+                "disk_encryption_set_id": "",
+                "disk_size_gb": 30,
+                "name": "webapp01vm_disk1_aa8c0417da294e95ab8588e90f9e5fe4",
+                "storage_account_type": "Standard_LRS",
+                "write_accelerator_enabled": false
+              }
+            ],
+            "patch_mode": "ImageDefault",
+            "plan": [],
+            "platform_fault_domain": -1,
+            "priority": "Regular",
+            "private_ip_address": "10.0.1.4",
+            "private_ip_addresses": [
+              "10.0.1.4"
+            ],
+            "provision_vm_agent": true,
+            "proximity_placement_group_id": "",
+            "public_ip_address": "",
+            "public_ip_addresses": [],
+            "resource_group_name": "france01RG",
+            "secret": [],
+            "secure_boot_enabled": false,
+            "size": "Standard_B1s",
+            "source_image_id": "",
+            "source_image_reference": [
+              {
+                "offer": "0001-com-ubuntu-server-jammy",
+                "publisher": "Canonical",
+                "sku": "22_04-lts",
+                "version": "latest"
+              }
+            ],
+            "tags": null,
+            "termination_notification": null,
+            "timeouts": null,
+            "user_data": "",
+            "virtual_machine_id": "a99fec26-3ae3-4884-935c-a9f3623b06c3",
+            "virtual_machine_scale_set_id": "",
+            "vtpm_enabled": false,
+            "zone": ""
+          },
+          "sensitive_attributes": [
+            [
+              {
+                "type": "get_attr",
+                "value": "admin_password"
+              }
+            ],
+            [
+              {
+                "type": "get_attr",
+                "value": "custom_data"
+              }
+            ]
+          ],
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoyNzAwMDAwMDAwMDAwLCJkZWxldGUiOjI3MDAwMDAwMDAwMDAsInJlYWQiOjMwMDAwMDAwMDAwMCwidXBkYXRlIjoyNzAwMDAwMDAwMDAwfX0=",
+          "dependencies": [
+            "module.Resource_Group.azurerm_resource_group.france01RG",
+            "module.Subnet.azurerm_subnet.webApp01Subnet",
+            "module.Vnet.azurerm_virtual_network.france01Vnet",
+            "module.nic.azurerm_network_interface.webapp01NI"
+          ]
+        }
+      ]
+    },
+    {
+      "module": "module.Vms",
+      "mode": "managed",
+      "type": "azurerm_linux_virtual_machine",
+      "name": "webapp02vm",
+      "provider": "provider[\"registry.terraform.io/hashicorp/azurerm\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "additional_capabilities": [],
+            "admin_password": "@demopassword123",
+            "admin_ssh_key": [],
+            "admin_username": "demoadmin",
+            "allow_extension_operations": true,
+            "availability_set_id": "",
+            "boot_diagnostics": [],
+            "computer_name": "webapp02vm",
+            "custom_data": null,
+            "dedicated_host_group_id": "",
+            "dedicated_host_id": "",
+            "disable_password_authentication": false,
+            "edge_zone": "",
+            "encryption_at_host_enabled": false,
+            "eviction_policy": "",
+            "extensions_time_budget": "PT1H30M",
+            "id": "/subscriptions/3e55e921-1317-405e-9b21-3a5455dac609/resourceGroups/france01RG/providers/Microsoft.Compute/virtualMachines/webapp02vm",
+            "identity": [],
+            "license_type": "",
+            "location": "francecentral",
+            "max_bid_price": -1,
+            "name": "webapp02vm",
+            "network_interface_ids": [
+              "/subscriptions/3e55e921-1317-405e-9b21-3a5455dac609/resourceGroups/france01RG/providers/Microsoft.Network/networkInterfaces/webapp02NI"
+            ],
+            "os_disk": [
+              {
+                "caching": "ReadWrite",
+                "diff_disk_settings": [],
+                "disk_encryption_set_id": "",
+                "disk_size_gb": 30,
+                "name": "webapp02vm_disk1_950af8da2dd34e11bf78aae905f45226",
+                "storage_account_type": "Standard_LRS",
+                "write_accelerator_enabled": false
+              }
+            ],
+            "patch_mode": "ImageDefault",
+            "plan": [],
+            "platform_fault_domain": -1,
+            "priority": "Regular",
+            "private_ip_address": "10.0.1.5",
+            "private_ip_addresses": [
+              "10.0.1.5"
+            ],
+            "provision_vm_agent": true,
+            "proximity_placement_group_id": "",
+            "public_ip_address": "",
+            "public_ip_addresses": [],
+            "resource_group_name": "france01RG",
+            "secret": [],
+            "secure_boot_enabled": false,
+            "size": "Standard_B1s",
+            "source_image_id": "",
+            "source_image_reference": [
+              {
+                "offer": "0001-com-ubuntu-server-jammy",
+                "publisher": "Canonical",
+                "sku": "22_04-lts",
+                "version": "latest"
+              }
+            ],
+            "tags": null,
+            "termination_notification": null,
+            "timeouts": null,
+            "user_data": "",
+            "virtual_machine_id": "09214920-9955-4d45-8412-2c3f31d9532e",
+            "virtual_machine_scale_set_id": "",
+            "vtpm_enabled": false,
+            "zone": ""
+          },
+          "sensitive_attributes": [
+            [
+              {
+                "type": "get_attr",
+                "value": "admin_password"
+              }
+            ],
+            [
+              {
+                "type": "get_attr",
+                "value": "custom_data"
+              }
+            ]
+          ],
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoyNzAwMDAwMDAwMDAwLCJkZWxldGUiOjI3MDAwMDAwMDAwMDAsInJlYWQiOjMwMDAwMDAwMDAwMCwidXBkYXRlIjoyNzAwMDAwMDAwMDAwfX0=",
+          "dependencies": [
+            "module.Resource_Group.azurerm_resource_group.france01RG",
+            "module.Subnet.azurerm_subnet.webApp01Subnet",
+            "module.Vnet.azurerm_virtual_network.france01Vnet",
+            "module.nic.azurerm_network_interface.webapp02NI"
+          ]
+        }
+      ]
+    },
+    {
+      "module": "module.Vms",
+      "mode": "managed",
+      "type": "azurerm_linux_virtual_machine",
+      "name": "webapp03vm",
+      "provider": "provider[\"registry.terraform.io/hashicorp/azurerm\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "additional_capabilities": [],
+            "admin_password": "@demopassword123",
+            "admin_ssh_key": [],
+            "admin_username": "demoadmin",
+            "allow_extension_operations": true,
+            "availability_set_id": "",
+            "boot_diagnostics": [],
+            "computer_name": "webapp03vm",
+            "custom_data": null,
+            "dedicated_host_group_id": "",
+            "dedicated_host_id": "",
+            "disable_password_authentication": false,
+            "edge_zone": "",
+            "encryption_at_host_enabled": false,
+            "eviction_policy": "",
+            "extensions_time_budget": "PT1H30M",
+            "id": "/subscriptions/3e55e921-1317-405e-9b21-3a5455dac609/resourceGroups/eastUS01RG/providers/Microsoft.Compute/virtualMachines/webapp03vm",
+            "identity": [],
+            "license_type": "",
+            "location": "eastus",
+            "max_bid_price": -1,
+            "name": "webapp03vm",
+            "network_interface_ids": [
+              "/subscriptions/3e55e921-1317-405e-9b21-3a5455dac609/resourceGroups/eastUS01RG/providers/Microsoft.Network/networkInterfaces/webapp03NI"
+            ],
+            "os_disk": [
+              {
+                "caching": "ReadWrite",
+                "diff_disk_settings": [],
+                "disk_encryption_set_id": "",
+                "disk_size_gb": 30,
+                "name": "webapp03vm_disk1_8c634bad8308454ca49cb5d7ec920d41",
+                "storage_account_type": "Standard_LRS",
+                "write_accelerator_enabled": false
+              }
+            ],
+            "patch_mode": "ImageDefault",
+            "plan": [],
+            "platform_fault_domain": -1,
+            "priority": "Regular",
+            "private_ip_address": "192.168.2.4",
+            "private_ip_addresses": [
+              "192.168.2.4"
+            ],
+            "provision_vm_agent": true,
+            "proximity_placement_group_id": "",
+            "public_ip_address": "",
+            "public_ip_addresses": [],
+            "resource_group_name": "eastUS01RG",
+            "secret": [],
+            "secure_boot_enabled": false,
+            "size": "Standard_B1s",
+            "source_image_id": "",
+            "source_image_reference": [
+              {
+                "offer": "0001-com-ubuntu-server-jammy",
+                "publisher": "Canonical",
+                "sku": "22_04-lts",
+                "version": "latest"
+              }
+            ],
+            "tags": null,
+            "termination_notification": null,
+            "timeouts": null,
+            "user_data": "",
+            "virtual_machine_id": "817a8ab0-a0ae-4fe7-adc1-3d2c8e4e97e9",
+            "virtual_machine_scale_set_id": "",
+            "vtpm_enabled": false,
+            "zone": ""
+          },
+          "sensitive_attributes": [
+            [
+              {
+                "type": "get_attr",
+                "value": "custom_data"
+              }
+            ],
+            [
+              {
+                "type": "get_attr",
+                "value": "admin_password"
+              }
+            ]
+          ],
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoyNzAwMDAwMDAwMDAwLCJkZWxldGUiOjI3MDAwMDAwMDAwMDAsInJlYWQiOjMwMDAwMDAwMDAwMCwidXBkYXRlIjoyNzAwMDAwMDAwMDAwfX0=",
+          "dependencies": [
+            "module.Resource_Group.azurerm_resource_group.eastUS01RG",
+            "module.Subnet.azurerm_subnet.web02Subnet",
+            "module.Vnet.azurerm_virtual_network.eastUS01Vnet",
+            "module.nic.azurerm_network_interface.webapp03NI"
+          ]
+        }
+      ]
+    },
+    {
+      "module": "module.Vms",
+      "mode": "managed",
+      "type": "azurerm_linux_virtual_machine",
+      "name": "webapp04vm",
+      "provider": "provider[\"registry.terraform.io/hashicorp/azurerm\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "additional_capabilities": [],
+            "admin_password": "@demopassword123",
+            "admin_ssh_key": [],
+            "admin_username": "demoadmin",
+            "allow_extension_operations": true,
+            "availability_set_id": "",
+            "boot_diagnostics": [],
+            "computer_name": "webapp04vm",
+            "custom_data": null,
+            "dedicated_host_group_id": "",
+            "dedicated_host_id": "",
+            "disable_password_authentication": false,
+            "edge_zone": "",
+            "encryption_at_host_enabled": false,
+            "eviction_policy": "",
+            "extensions_time_budget": "PT1H30M",
+            "id": "/subscriptions/3e55e921-1317-405e-9b21-3a5455dac609/resourceGroups/eastUS01RG/providers/Microsoft.Compute/virtualMachines/webapp04vm",
+            "identity": [],
+            "license_type": "",
+            "location": "eastus",
+            "max_bid_price": -1,
+            "name": "webapp04vm",
+            "network_interface_ids": [
+              "/subscriptions/3e55e921-1317-405e-9b21-3a5455dac609/resourceGroups/eastUS01RG/providers/Microsoft.Network/networkInterfaces/webapp04NI"
+            ],
+            "os_disk": [
+              {
+                "caching": "ReadWrite",
+                "diff_disk_settings": [],
+                "disk_encryption_set_id": "",
+                "disk_size_gb": 30,
+                "name": "webapp04vm_disk1_46c2a62c86be4e10b2b0c219f1405fde",
+                "storage_account_type": "Standard_LRS",
+                "write_accelerator_enabled": false
+              }
+            ],
+            "patch_mode": "ImageDefault",
+            "plan": [],
+            "platform_fault_domain": -1,
+            "priority": "Regular",
+            "private_ip_address": "192.168.2.5",
+            "private_ip_addresses": [
+              "192.168.2.5"
+            ],
+            "provision_vm_agent": true,
+            "proximity_placement_group_id": "",
+            "public_ip_address": "",
+            "public_ip_addresses": [],
+            "resource_group_name": "eastUS01RG",
+            "secret": [],
+            "secure_boot_enabled": false,
+            "size": "Standard_B1s",
+            "source_image_id": "",
+            "source_image_reference": [
+              {
+                "offer": "0001-com-ubuntu-server-jammy",
+                "publisher": "Canonical",
+                "sku": "22_04-lts",
+                "version": "latest"
+              }
+            ],
+            "tags": null,
+            "termination_notification": null,
+            "timeouts": null,
+            "user_data": "",
+            "virtual_machine_id": "30df0207-e528-494c-a2f1-5ddf20d1b597",
+            "virtual_machine_scale_set_id": "",
+            "vtpm_enabled": false,
+            "zone": ""
+          },
+          "sensitive_attributes": [
+            [
+              {
+                "type": "get_attr",
+                "value": "custom_data"
+              }
+            ],
+            [
+              {
+                "type": "get_attr",
+                "value": "admin_password"
+              }
+            ]
+          ],
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoyNzAwMDAwMDAwMDAwLCJkZWxldGUiOjI3MDAwMDAwMDAwMDAsInJlYWQiOjMwMDAwMDAwMDAwMCwidXBkYXRlIjoyNzAwMDAwMDAwMDAwfX0=",
+          "dependencies": [
+            "module.Resource_Group.azurerm_resource_group.eastUS01RG",
+            "module.Subnet.azurerm_subnet.web02Subnet",
+            "module.Vnet.azurerm_virtual_network.eastUS01Vnet",
+            "module.nic.azurerm_network_interface.webapp04NI"
+          ]
+        }
+      ]
+    },
+    {
       "module": "module.Vnet",
       "mode": "managed",
       "type": "azurerm_virtual_network",
@@ -191,7 +714,7 @@
             "dns_servers": [],
             "edge_zone": "",
             "flow_timeout_in_minutes": 0,
-            "guid": "7f444203-6393-4dc0-a60f-6932664f6900",
+            "guid": "05157cd0-a025-4b29-afce-fddadfcc983a",
             "id": "/subscriptions/3e55e921-1317-405e-9b21-3a5455dac609/resourceGroups/eastUS01RG/providers/Microsoft.Network/virtualNetworks/eastUS01Vnet",
             "location": "eastus",
             "name": "eastUS01Vnet",
@@ -201,7 +724,7 @@
                 "address_prefix": "192.168.2.0/24",
                 "id": "/subscriptions/3e55e921-1317-405e-9b21-3a5455dac609/resourceGroups/eastUS01RG/providers/Microsoft.Network/virtualNetworks/eastUS01Vnet/subnets/web02Subnet",
                 "name": "web02Subnet",
-                "security_group": ""
+                "security_group": "/subscriptions/3e55e921-1317-405e-9b21-3a5455dac609/resourceGroups/eastUS01RG/providers/Microsoft.Network/networkSecurityGroups/webNSG02"
               }
             ],
             "tags": {
@@ -235,7 +758,7 @@
             "dns_servers": [],
             "edge_zone": "",
             "flow_timeout_in_minutes": 0,
-            "guid": "99e380fc-75c5-49fc-b677-1ba0b22844b1",
+            "guid": "e74dd3a7-24b0-46f2-afec-d0ee17a8f540",
             "id": "/subscriptions/3e55e921-1317-405e-9b21-3a5455dac609/resourceGroups/france01RG/providers/Microsoft.Network/virtualNetworks/france01Vnet",
             "location": "francecentral",
             "name": "france01Vnet",
@@ -245,7 +768,7 @@
                 "address_prefix": "10.0.1.0/24",
                 "id": "/subscriptions/3e55e921-1317-405e-9b21-3a5455dac609/resourceGroups/france01RG/providers/Microsoft.Network/virtualNetworks/france01Vnet/subnets/webApp01Subnet",
                 "name": "webApp01Subnet",
-                "security_group": ""
+                "security_group": "/subscriptions/3e55e921-1317-405e-9b21-3a5455dac609/resourceGroups/france01RG/providers/Microsoft.Network/networkSecurityGroups/webNSG01"
               }
             ],
             "tags": {
@@ -279,7 +802,7 @@
             "dns_servers": [],
             "edge_zone": "",
             "flow_timeout_in_minutes": 0,
-            "guid": "4737ea98-c406-4642-8244-0c840f0fc208",
+            "guid": "59fb72ee-56a9-4de1-8851-5b6a7c085f23",
             "id": "/subscriptions/3e55e921-1317-405e-9b21-3a5455dac609/resourceGroups/westEurope01rg/providers/Microsoft.Network/virtualNetworks/westEurope01Vnet",
             "location": "westeurope",
             "name": "westEurope01Vnet",
@@ -322,7 +845,7 @@
             "enable_ip_forwarding": false,
             "id": "/subscriptions/3e55e921-1317-405e-9b21-3a5455dac609/resourceGroups/westEurope01rg/providers/Microsoft.Network/networkInterfaces/ansible01NI",
             "internal_dns_name_label": "",
-            "internal_domain_name_suffix": "tdvdorygyrbenasebsca4d4cba.ax.internal.cloudapp.net",
+            "internal_domain_name_suffix": "3zzpwwnjk1qu1ccrlnvhycc5ed.ax.internal.cloudapp.net",
             "ip_configuration": [
               {
                 "gateway_load_balancer_frontend_ip_configuration_id": "",
@@ -343,7 +866,7 @@
               "172.0.1.5"
             ],
             "resource_group_name": "westEurope01rg",
-            "tags": null,
+            "tags": {},
             "timeouts": null,
             "virtual_machine_id": ""
           },
@@ -375,7 +898,7 @@
             "enable_ip_forwarding": false,
             "id": "/subscriptions/3e55e921-1317-405e-9b21-3a5455dac609/resourceGroups/france01RG/providers/Microsoft.Network/networkInterfaces/webapp01NI",
             "internal_dns_name_label": "",
-            "internal_domain_name_suffix": "5saohgofox4etntxdoqlekcewb.parx.internal.cloudapp.net",
+            "internal_domain_name_suffix": "u5ju1z3qetzenl5m0dxbpkhvia.parx.internal.cloudapp.net",
             "ip_configuration": [
               {
                 "gateway_load_balancer_frontend_ip_configuration_id": "",
@@ -396,7 +919,7 @@
               "10.0.1.4"
             ],
             "resource_group_name": "france01RG",
-            "tags": null,
+            "tags": {},
             "timeouts": null,
             "virtual_machine_id": ""
           },
@@ -427,7 +950,7 @@
             "enable_ip_forwarding": false,
             "id": "/subscriptions/3e55e921-1317-405e-9b21-3a5455dac609/resourceGroups/france01RG/providers/Microsoft.Network/networkInterfaces/webapp02NI",
             "internal_dns_name_label": "",
-            "internal_domain_name_suffix": "5saohgofox4etntxdoqlekcewb.parx.internal.cloudapp.net",
+            "internal_domain_name_suffix": "u5ju1z3qetzenl5m0dxbpkhvia.parx.internal.cloudapp.net",
             "ip_configuration": [
               {
                 "gateway_load_balancer_frontend_ip_configuration_id": "",
@@ -448,7 +971,7 @@
               "10.0.1.5"
             ],
             "resource_group_name": "france01RG",
-            "tags": null,
+            "tags": {},
             "timeouts": null,
             "virtual_machine_id": ""
           },
@@ -479,7 +1002,7 @@
             "enable_ip_forwarding": false,
             "id": "/subscriptions/3e55e921-1317-405e-9b21-3a5455dac609/resourceGroups/eastUS01RG/providers/Microsoft.Network/networkInterfaces/webapp03NI",
             "internal_dns_name_label": "",
-            "internal_domain_name_suffix": "anbei52tmpae1jqpnezgmt1jaa.bx.internal.cloudapp.net",
+            "internal_domain_name_suffix": "0b4bkbjfuauuxl4o5xnn5teyhc.bx.internal.cloudapp.net",
             "ip_configuration": [
               {
                 "gateway_load_balancer_frontend_ip_configuration_id": "",
@@ -500,7 +1023,7 @@
               "192.168.2.4"
             ],
             "resource_group_name": "eastUS01RG",
-            "tags": null,
+            "tags": {},
             "timeouts": null,
             "virtual_machine_id": ""
           },
@@ -531,7 +1054,7 @@
             "enable_ip_forwarding": false,
             "id": "/subscriptions/3e55e921-1317-405e-9b21-3a5455dac609/resourceGroups/eastUS01RG/providers/Microsoft.Network/networkInterfaces/webapp04NI",
             "internal_dns_name_label": "",
-            "internal_domain_name_suffix": "anbei52tmpae1jqpnezgmt1jaa.bx.internal.cloudapp.net",
+            "internal_domain_name_suffix": "0b4bkbjfuauuxl4o5xnn5teyhc.bx.internal.cloudapp.net",
             "ip_configuration": [
               {
                 "gateway_load_balancer_frontend_ip_configuration_id": "",
@@ -552,7 +1075,7 @@
               "192.168.2.5"
             ],
             "resource_group_name": "eastUS01RG",
-            "tags": null,
+            "tags": {},
             "timeouts": null,
             "virtual_machine_id": ""
           },

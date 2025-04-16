@@ -74,3 +74,24 @@ module "nsg" {
   ansible01SubnetId = module.Subnet.ansible01SubnetId
   web02SubnetId     = module.Subnet.web02SubnetId
 }
+
+module "Vms" {
+  source = "./modules/vm"
+
+  username = var.username
+  password = var.password
+
+  hubWestEurope01RGName = module.Resource_Group.hubWestEurope01RGName
+  france01RGName        = module.Resource_Group.france01RGName
+  eastUS01RGName        = module.Resource_Group.eastUS01RGName
+
+  hubWestEurope01RGLocation = module.Resource_Group.hubWestEurope01RGLocation
+  france01RGLocation        = module.Resource_Group.france01RGLocation
+  eastUS01RGLocation        = module.Resource_Group.eastUS01RGLocation
+
+  webapp01NIID = module.nic.webapp01NIID
+  webapp02NIID = module.nic.webapp02NIID
+  webapp03NIID = module.nic.webapp03NIID
+  webapp04NIID = module.nic.webapp04NIID
+  ansible01NIID = module.nic.ansible01NIID
+}

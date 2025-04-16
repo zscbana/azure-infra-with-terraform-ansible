@@ -2,13 +2,14 @@
 # France Vm
 resource "azurerm_linux_virtual_machine" "webapp01vm" {
   name                = "webapp01vm"
-  resource_group_name = azurerm_resource_group.france01RG.name
-  location            = azurerm_resource_group.france01RG.location
+  resource_group_name = var.france01RGName
+  location            = var.france01RGLocation
   size                = "Standard_B1s"
-  admin_username      = "demoadmin"
-  admin_password      = "@demopassword123"
+  admin_username      = var.username
+  admin_password      = var.password
+  disable_password_authentication = false
   network_interface_ids = [
-    azurerm_network_interface.webapp01NI.id,
+    var.webapp01NIID,
   ]
 
   os_disk {
@@ -26,13 +27,14 @@ resource "azurerm_linux_virtual_machine" "webapp01vm" {
 
 resource "azurerm_linux_virtual_machine" "webapp02vm" {
   name                = "webapp02vm"
-  resource_group_name = azurerm_resource_group.france01RG.name
-  location            = azurerm_resource_group.france01RG.location
+  resource_group_name = var.france01RGName
+  location            = var.france01RGLocation
   size                = "Standard_B1s"
-  admin_username      = "demoadmin"
-  admin_password      = "@demopassword123"
+  admin_username      = var.username
+  admin_password      = var.password
+  disable_password_authentication = false
   network_interface_ids = [
-    azurerm_network_interface.webapp02NI.id,
+    var.webapp02NIID,
   ]
 
   os_disk {
@@ -51,13 +53,14 @@ resource "azurerm_linux_virtual_machine" "webapp02vm" {
 # East us Vm
 resource "azurerm_linux_virtual_machine" "webapp03vm" {
   name                = "webapp03vm"
-  resource_group_name = azurerm_resource_group.eastUS01RG.name
-  location            = azurerm_resource_group.eastUS01RG.location
+  resource_group_name = var.eastUS01RGName
+  location            = var.eastUS01RGLocation
   size                = "Standard_B1s"
-  admin_username      = "demoadmin"
-  admin_password      = "@demopassword123"
+  admin_username      = var.username
+  admin_password      = var.password
+  disable_password_authentication = false
   network_interface_ids = [
-    azurerm_network_interface.webapp03NI.id,
+    var.webapp03NIID,
   ]
 
   os_disk {
@@ -75,13 +78,14 @@ resource "azurerm_linux_virtual_machine" "webapp03vm" {
 
 resource "azurerm_linux_virtual_machine" "webapp04vm" {
   name                = "webapp04vm"
-  resource_group_name = azurerm_resource_group.eastUS01RG.name
-  location            = azurerm_resource_group.eastUS01RG.location
+  resource_group_name = var.eastUS01RGName
+  location            = var.eastUS01RGLocation
   size                = "Standard_B1s"
-  admin_username      = "demoadmin"
-  admin_password      = "@demopassword123"
+  admin_username      = var.username
+  admin_password      = var.password
+  disable_password_authentication = false
   network_interface_ids = [
-    azurerm_network_interface.webapp04NI.id,
+    var.webapp04NIID,
   ]
 
   os_disk {
@@ -100,13 +104,15 @@ resource "azurerm_linux_virtual_machine" "webapp04vm" {
 # West Europe Ansible vm
 resource "azurerm_linux_virtual_machine" "anssible01vm" {
   name                = "anssible01vm"
-  resource_group_name = azurerm_resource_group.Hub01RG.name
-  location            = azurerm_resource_group.Hub01RG.location
+  resource_group_name = var.hubWestEurope01RGName
+  location            = var.hubWestEurope01RGLocation
   size                = "Standard_B1s"
-  admin_username      = "demoadmin"
-  admin_password      = "@demopassword123"
+  admin_username      = var.username
+  admin_password      = var.password
+  disable_password_authentication = false
+
   network_interface_ids = [
-    azurerm_network_interface.ansible01NI.id,
+    var.ansible01NIID,
   ]
 
   os_disk {
