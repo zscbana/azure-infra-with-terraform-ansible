@@ -1,0 +1,141 @@
+digraph G {
+  rankdir = "RL";
+  node [shape = rect, fontname = "sans-serif"];
+  subgraph "cluster_module.Ips" {
+    label = "module.Ips"
+    fontname = "sans-serif"
+    "module.Ips.azurerm_public_ip.EastUSLoadBalancerPubIP" [label="azurerm_public_ip.EastUSLoadBalancerPubIP"];
+    "module.Ips.azurerm_public_ip.FranceLoadBalancerPubIP" [label="azurerm_public_ip.FranceLoadBalancerPubIP"];
+  }
+  subgraph "cluster_module.LB" {
+    label = "module.LB"
+    fontname = "sans-serif"
+    "module.LB.azurerm_lb.EastUSLoadBalancer" [label="azurerm_lb.EastUSLoadBalancer"];
+    "module.LB.azurerm_lb.FranceLoadBalancer" [label="azurerm_lb.FranceLoadBalancer"];
+    "module.LB.azurerm_lb_backend_address_pool.EastUSLoadBalancerBackend" [label="azurerm_lb_backend_address_pool.EastUSLoadBalancerBackend"];
+    "module.LB.azurerm_lb_backend_address_pool.FranceLoadBalancerBackend" [label="azurerm_lb_backend_address_pool.FranceLoadBalancerBackend"];
+    "module.LB.azurerm_lb_probe.http_probe_EastUS" [label="azurerm_lb_probe.http_probe_EastUS"];
+    "module.LB.azurerm_lb_probe.http_probe_France" [label="azurerm_lb_probe.http_probe_France"];
+    "module.LB.azurerm_lb_rule.http_rule_EastUS" [label="azurerm_lb_rule.http_rule_EastUS"];
+    "module.LB.azurerm_lb_rule.http_rule_France" [label="azurerm_lb_rule.http_rule_France"];
+    "module.LB.azurerm_network_interface_backend_address_pool_association.ipconfig1_web01" [label="azurerm_network_interface_backend_address_pool_association.ipconfig1_web01"];
+    "module.LB.azurerm_network_interface_backend_address_pool_association.ipconfig1_web02" [label="azurerm_network_interface_backend_address_pool_association.ipconfig1_web02"];
+    "module.LB.azurerm_network_interface_backend_address_pool_association.ipconfig1_web03" [label="azurerm_network_interface_backend_address_pool_association.ipconfig1_web03"];
+    "module.LB.azurerm_network_interface_backend_address_pool_association.ipconfig1_web04" [label="azurerm_network_interface_backend_address_pool_association.ipconfig1_web04"];
+    "module.LB.azurerm_traffic_manager_external_endpoint.EastUSEndpoint" [label="azurerm_traffic_manager_external_endpoint.EastUSEndpoint"];
+    "module.LB.azurerm_traffic_manager_external_endpoint.FranceEndpoint" [label="azurerm_traffic_manager_external_endpoint.FranceEndpoint"];
+    "module.LB.azurerm_traffic_manager_profile.Traffic-Manager01" [label="azurerm_traffic_manager_profile.Traffic-Manager01"];
+  }
+  subgraph "cluster_module.Resource_Group" {
+    label = "module.Resource_Group"
+    fontname = "sans-serif"
+    "module.Resource_Group.azurerm_resource_group.Hub01RG" [label="azurerm_resource_group.Hub01RG"];
+    "module.Resource_Group.azurerm_resource_group.eastUS01RG" [label="azurerm_resource_group.eastUS01RG"];
+    "module.Resource_Group.azurerm_resource_group.france01RG" [label="azurerm_resource_group.france01RG"];
+  }
+  subgraph "cluster_module.Subnet" {
+    label = "module.Subnet"
+    fontname = "sans-serif"
+    "module.Subnet.azurerm_subnet.ansible01Subnet" [label="azurerm_subnet.ansible01Subnet"];
+    "module.Subnet.azurerm_subnet.web02Subnet" [label="azurerm_subnet.web02Subnet"];
+    "module.Subnet.azurerm_subnet.webApp01Subnet" [label="azurerm_subnet.webApp01Subnet"];
+  }
+  subgraph "cluster_module.Vms" {
+    label = "module.Vms"
+    fontname = "sans-serif"
+    "module.Vms.azurerm_linux_virtual_machine.anssible01vm" [label="azurerm_linux_virtual_machine.anssible01vm"];
+    "module.Vms.azurerm_linux_virtual_machine.webapp01vm" [label="azurerm_linux_virtual_machine.webapp01vm"];
+    "module.Vms.azurerm_linux_virtual_machine.webapp02vm" [label="azurerm_linux_virtual_machine.webapp02vm"];
+    "module.Vms.azurerm_linux_virtual_machine.webapp03vm" [label="azurerm_linux_virtual_machine.webapp03vm"];
+    "module.Vms.azurerm_linux_virtual_machine.webapp04vm" [label="azurerm_linux_virtual_machine.webapp04vm"];
+  }
+  subgraph "cluster_module.Vnet" {
+    label = "module.Vnet"
+    fontname = "sans-serif"
+    "module.Vnet.azurerm_virtual_network.eastUS01Vnet" [label="azurerm_virtual_network.eastUS01Vnet"];
+    "module.Vnet.azurerm_virtual_network.france01Vnet" [label="azurerm_virtual_network.france01Vnet"];
+    "module.Vnet.azurerm_virtual_network.westEurope01Vnet" [label="azurerm_virtual_network.westEurope01Vnet"];
+    "module.Vnet.azurerm_virtual_network_peering.peering_EastUS2WestEurope" [label="azurerm_virtual_network_peering.peering_EastUS2WestEurope"];
+    "module.Vnet.azurerm_virtual_network_peering.peering_France2WestEurope" [label="azurerm_virtual_network_peering.peering_France2WestEurope"];
+    "module.Vnet.azurerm_virtual_network_peering.peering_WestEurope2EastUS" [label="azurerm_virtual_network_peering.peering_WestEurope2EastUS"];
+    "module.Vnet.azurerm_virtual_network_peering.peering_WestEurope2France" [label="azurerm_virtual_network_peering.peering_WestEurope2France"];
+  }
+  subgraph "cluster_module.nic" {
+    label = "module.nic"
+    fontname = "sans-serif"
+    "module.nic.azurerm_network_interface.ansible01NI" [label="azurerm_network_interface.ansible01NI"];
+    "module.nic.azurerm_network_interface.webapp01NI" [label="azurerm_network_interface.webapp01NI"];
+    "module.nic.azurerm_network_interface.webapp02NI" [label="azurerm_network_interface.webapp02NI"];
+    "module.nic.azurerm_network_interface.webapp03NI" [label="azurerm_network_interface.webapp03NI"];
+    "module.nic.azurerm_network_interface.webapp04NI" [label="azurerm_network_interface.webapp04NI"];
+    "module.nic.azurerm_public_ip.ansilbe01PIP" [label="azurerm_public_ip.ansilbe01PIP"];
+  }
+  subgraph "cluster_module.nsg" {
+    label = "module.nsg"
+    fontname = "sans-serif"
+    "module.nsg.azurerm_network_security_group.anisble01NSG" [label="azurerm_network_security_group.anisble01NSG"];
+    "module.nsg.azurerm_network_security_group.webNSG01" [label="azurerm_network_security_group.webNSG01"];
+    "module.nsg.azurerm_network_security_group.webNSG02" [label="azurerm_network_security_group.webNSG02"];
+    "module.nsg.azurerm_subnet_network_security_group_association.Asso01" [label="azurerm_subnet_network_security_group_association.Asso01"];
+    "module.nsg.azurerm_subnet_network_security_group_association.Asso02" [label="azurerm_subnet_network_security_group_association.Asso02"];
+    "module.nsg.azurerm_subnet_network_security_group_association.ansibleAsso" [label="azurerm_subnet_network_security_group_association.ansibleAsso"];
+  }
+  "module.Ips.azurerm_public_ip.EastUSLoadBalancerPubIP" -> "module.Resource_Group.azurerm_resource_group.eastUS01RG";
+  "module.Ips.azurerm_public_ip.FranceLoadBalancerPubIP" -> "module.Resource_Group.azurerm_resource_group.france01RG";
+  "module.LB.azurerm_lb.EastUSLoadBalancer" -> "module.Ips.azurerm_public_ip.EastUSLoadBalancerPubIP";
+  "module.LB.azurerm_lb.FranceLoadBalancer" -> "module.Ips.azurerm_public_ip.FranceLoadBalancerPubIP";
+  "module.LB.azurerm_lb_backend_address_pool.EastUSLoadBalancerBackend" -> "module.LB.azurerm_lb.EastUSLoadBalancer";
+  "module.LB.azurerm_lb_backend_address_pool.FranceLoadBalancerBackend" -> "module.LB.azurerm_lb.FranceLoadBalancer";
+  "module.LB.azurerm_lb_probe.http_probe_EastUS" -> "module.LB.azurerm_lb.EastUSLoadBalancer";
+  "module.LB.azurerm_lb_probe.http_probe_France" -> "module.LB.azurerm_lb.FranceLoadBalancer";
+  "module.LB.azurerm_lb_rule.http_rule_EastUS" -> "module.LB.azurerm_lb_probe.http_probe_EastUS";
+  "module.LB.azurerm_lb_rule.http_rule_France" -> "module.LB.azurerm_lb_probe.http_probe_France";
+  "module.LB.azurerm_network_interface_backend_address_pool_association.ipconfig1_web01" -> "module.LB.azurerm_lb_backend_address_pool.FranceLoadBalancerBackend";
+  "module.LB.azurerm_network_interface_backend_address_pool_association.ipconfig1_web01" -> "module.nic.azurerm_network_interface.webapp01NI";
+  "module.LB.azurerm_network_interface_backend_address_pool_association.ipconfig1_web02" -> "module.LB.azurerm_lb_backend_address_pool.FranceLoadBalancerBackend";
+  "module.LB.azurerm_network_interface_backend_address_pool_association.ipconfig1_web02" -> "module.nic.azurerm_network_interface.webapp02NI";
+  "module.LB.azurerm_network_interface_backend_address_pool_association.ipconfig1_web03" -> "module.LB.azurerm_lb_backend_address_pool.EastUSLoadBalancerBackend";
+  "module.LB.azurerm_network_interface_backend_address_pool_association.ipconfig1_web03" -> "module.nic.azurerm_network_interface.webapp03NI";
+  "module.LB.azurerm_network_interface_backend_address_pool_association.ipconfig1_web04" -> "module.LB.azurerm_lb_backend_address_pool.EastUSLoadBalancerBackend";
+  "module.LB.azurerm_network_interface_backend_address_pool_association.ipconfig1_web04" -> "module.nic.azurerm_network_interface.webapp04NI";
+  "module.LB.azurerm_traffic_manager_external_endpoint.EastUSEndpoint" -> "module.Ips.azurerm_public_ip.EastUSLoadBalancerPubIP";
+  "module.LB.azurerm_traffic_manager_external_endpoint.EastUSEndpoint" -> "module.LB.azurerm_traffic_manager_profile.Traffic-Manager01";
+  "module.LB.azurerm_traffic_manager_external_endpoint.FranceEndpoint" -> "module.Ips.azurerm_public_ip.FranceLoadBalancerPubIP";
+  "module.LB.azurerm_traffic_manager_external_endpoint.FranceEndpoint" -> "module.LB.azurerm_traffic_manager_profile.Traffic-Manager01";
+  "module.LB.azurerm_traffic_manager_profile.Traffic-Manager01" -> "module.Resource_Group.azurerm_resource_group.Hub01RG";
+  "module.Subnet.azurerm_subnet.ansible01Subnet" -> "module.Vnet.azurerm_virtual_network.westEurope01Vnet";
+  "module.Subnet.azurerm_subnet.web02Subnet" -> "module.Vnet.azurerm_virtual_network.eastUS01Vnet";
+  "module.Subnet.azurerm_subnet.webApp01Subnet" -> "module.Vnet.azurerm_virtual_network.france01Vnet";
+  "module.Vms.azurerm_linux_virtual_machine.anssible01vm" -> "module.nic.azurerm_network_interface.ansible01NI";
+  "module.Vms.azurerm_linux_virtual_machine.webapp01vm" -> "module.nic.azurerm_network_interface.webapp01NI";
+  "module.Vms.azurerm_linux_virtual_machine.webapp02vm" -> "module.nic.azurerm_network_interface.webapp02NI";
+  "module.Vms.azurerm_linux_virtual_machine.webapp03vm" -> "module.nic.azurerm_network_interface.webapp03NI";
+  "module.Vms.azurerm_linux_virtual_machine.webapp04vm" -> "module.nic.azurerm_network_interface.webapp04NI";
+  "module.Vnet.azurerm_virtual_network.eastUS01Vnet" -> "module.Resource_Group.azurerm_resource_group.eastUS01RG";
+  "module.Vnet.azurerm_virtual_network.france01Vnet" -> "module.Resource_Group.azurerm_resource_group.france01RG";
+  "module.Vnet.azurerm_virtual_network.westEurope01Vnet" -> "module.Resource_Group.azurerm_resource_group.Hub01RG";
+  "module.Vnet.azurerm_virtual_network_peering.peering_EastUS2WestEurope" -> "module.Vnet.azurerm_virtual_network.eastUS01Vnet";
+  "module.Vnet.azurerm_virtual_network_peering.peering_EastUS2WestEurope" -> "module.Vnet.azurerm_virtual_network.westEurope01Vnet";
+  "module.Vnet.azurerm_virtual_network_peering.peering_France2WestEurope" -> "module.Vnet.azurerm_virtual_network.france01Vnet";
+  "module.Vnet.azurerm_virtual_network_peering.peering_France2WestEurope" -> "module.Vnet.azurerm_virtual_network.westEurope01Vnet";
+  "module.Vnet.azurerm_virtual_network_peering.peering_WestEurope2EastUS" -> "module.Vnet.azurerm_virtual_network.eastUS01Vnet";
+  "module.Vnet.azurerm_virtual_network_peering.peering_WestEurope2EastUS" -> "module.Vnet.azurerm_virtual_network.westEurope01Vnet";
+  "module.Vnet.azurerm_virtual_network_peering.peering_WestEurope2France" -> "module.Vnet.azurerm_virtual_network.france01Vnet";
+  "module.Vnet.azurerm_virtual_network_peering.peering_WestEurope2France" -> "module.Vnet.azurerm_virtual_network.westEurope01Vnet";
+  "module.nic.azurerm_network_interface.ansible01NI" -> "module.Subnet.azurerm_subnet.ansible01Subnet";
+  "module.nic.azurerm_network_interface.ansible01NI" -> "module.nic.azurerm_public_ip.ansilbe01PIP";
+  "module.nic.azurerm_network_interface.webapp01NI" -> "module.Subnet.azurerm_subnet.webApp01Subnet";
+  "module.nic.azurerm_network_interface.webapp02NI" -> "module.Subnet.azurerm_subnet.webApp01Subnet";
+  "module.nic.azurerm_network_interface.webapp03NI" -> "module.Subnet.azurerm_subnet.web02Subnet";
+  "module.nic.azurerm_network_interface.webapp04NI" -> "module.Subnet.azurerm_subnet.web02Subnet";
+  "module.nic.azurerm_public_ip.ansilbe01PIP" -> "module.Resource_Group.azurerm_resource_group.Hub01RG";
+  "module.nsg.azurerm_network_security_group.anisble01NSG" -> "module.Resource_Group.azurerm_resource_group.Hub01RG";
+  "module.nsg.azurerm_network_security_group.webNSG01" -> "module.Resource_Group.azurerm_resource_group.france01RG";
+  "module.nsg.azurerm_network_security_group.webNSG02" -> "module.Resource_Group.azurerm_resource_group.eastUS01RG";
+  "module.nsg.azurerm_subnet_network_security_group_association.Asso01" -> "module.Subnet.azurerm_subnet.webApp01Subnet";
+  "module.nsg.azurerm_subnet_network_security_group_association.Asso01" -> "module.nsg.azurerm_network_security_group.webNSG01";
+  "module.nsg.azurerm_subnet_network_security_group_association.Asso02" -> "module.Subnet.azurerm_subnet.web02Subnet";
+  "module.nsg.azurerm_subnet_network_security_group_association.Asso02" -> "module.nsg.azurerm_network_security_group.webNSG02";
+  "module.nsg.azurerm_subnet_network_security_group_association.ansibleAsso" -> "module.Subnet.azurerm_subnet.ansible01Subnet";
+  "module.nsg.azurerm_subnet_network_security_group_association.ansibleAsso" -> "module.nsg.azurerm_network_security_group.anisble01NSG";
+}
