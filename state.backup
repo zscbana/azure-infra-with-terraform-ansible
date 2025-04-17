@@ -1,7 +1,7 @@
 {
   "version": 4,
   "terraform_version": "1.9.7",
-  "serial": 321,
+  "serial": 555,
   "lineage": "6befeca8-61c6-52e8-6446-fd3143e5d61d",
   "outputs": {},
   "resources": [
@@ -21,7 +21,7 @@
             "fqdn": null,
             "id": "/subscriptions/3e55e921-1317-405e-9b21-3a5455dac609/resourceGroups/eastUS01RG/providers/Microsoft.Network/publicIPAddresses/EastUSLoadBalancerPubIP",
             "idle_timeout_in_minutes": 4,
-            "ip_address": "4.246.208.93",
+            "ip_address": "172.178.13.79",
             "ip_tags": null,
             "ip_version": "IPv4",
             "location": "eastus",
@@ -59,7 +59,7 @@
             "fqdn": null,
             "id": "/subscriptions/3e55e921-1317-405e-9b21-3a5455dac609/resourceGroups/france01RG/providers/Microsoft.Network/publicIPAddresses/FranceLoadBalancerPubIP",
             "idle_timeout_in_minutes": 4,
-            "ip_address": "4.251.107.206",
+            "ip_address": "52.143.179.120",
             "ip_tags": null,
             "ip_version": "IPv4",
             "location": "francecentral",
@@ -702,7 +702,7 @@
                 "diff_disk_settings": [],
                 "disk_encryption_set_id": "",
                 "disk_size_gb": 30,
-                "name": "anssible01vm_disk1_ccb69a43fdea45e4b752bf255fa5046a",
+                "name": "anssible01vm_disk1_49b75e1350374d248ea261e280f444f7",
                 "storage_account_type": "Standard_LRS",
                 "write_accelerator_enabled": false
               }
@@ -717,9 +717,9 @@
             ],
             "provision_vm_agent": true,
             "proximity_placement_group_id": "",
-            "public_ip_address": "51.136.49.36",
+            "public_ip_address": "108.143.117.181",
             "public_ip_addresses": [
-              "51.136.49.36"
+              "108.143.117.181"
             ],
             "resource_group_name": "westEurope01rg",
             "secret": [],
@@ -738,7 +738,7 @@
             "termination_notification": null,
             "timeouts": null,
             "user_data": "",
-            "virtual_machine_id": "c77fbc26-586d-4627-86f9-c7569de06825",
+            "virtual_machine_id": "4bd28a1a-763c-4a0c-b289-2d3f19ee8015",
             "virtual_machine_scale_set_id": "",
             "vtpm_enabled": false,
             "zone": ""
@@ -809,7 +809,7 @@
                 "diff_disk_settings": [],
                 "disk_encryption_set_id": "",
                 "disk_size_gb": 30,
-                "name": "webapp01vm_disk1_3532ec5989ce40e29da1004994b7150b",
+                "name": "webapp01vm_disk1_2d9f12987354473e83dc9131fcf3d1ac",
                 "storage_account_type": "Standard_LRS",
                 "write_accelerator_enabled": false
               }
@@ -843,7 +843,7 @@
             "termination_notification": null,
             "timeouts": null,
             "user_data": "",
-            "virtual_machine_id": "19c954fe-5e53-45c5-8ca0-b49ad7f23b2e",
+            "virtual_machine_id": "c79cfbaa-f3a0-471d-831a-d7bb9b1d7afa",
             "virtual_machine_scale_set_id": "",
             "vtpm_enabled": false,
             "zone": ""
@@ -913,7 +913,7 @@
                 "diff_disk_settings": [],
                 "disk_encryption_set_id": "",
                 "disk_size_gb": 30,
-                "name": "webapp02vm_disk1_af59e5e0ad504a9f927fe26f6e6d5e62",
+                "name": "webapp02vm_disk1_649e3afa0d954ce6b2f4a9bb1fb0f272",
                 "storage_account_type": "Standard_LRS",
                 "write_accelerator_enabled": false
               }
@@ -947,7 +947,7 @@
             "termination_notification": null,
             "timeouts": null,
             "user_data": "",
-            "virtual_machine_id": "4f9d7a60-cfd4-45dd-8b7b-e6da51a6edef",
+            "virtual_machine_id": "520247bd-e70f-4744-bfa4-b02d132fc328",
             "virtual_machine_scale_set_id": "",
             "vtpm_enabled": false,
             "zone": ""
@@ -1017,7 +1017,7 @@
                 "diff_disk_settings": [],
                 "disk_encryption_set_id": "",
                 "disk_size_gb": 30,
-                "name": "webapp03vm_disk1_bf1e579eeb5247fead41903741deff0b",
+                "name": "webapp03vm_disk1_7275aee087d849038ce81da6fbc03543",
                 "storage_account_type": "Standard_LRS",
                 "write_accelerator_enabled": false
               }
@@ -1051,7 +1051,7 @@
             "termination_notification": null,
             "timeouts": null,
             "user_data": "",
-            "virtual_machine_id": "cfdd4382-7334-4c75-8317-7d2a6994ad83",
+            "virtual_machine_id": "6c2aee26-e2c9-413e-a77f-6d4cb1c96b80",
             "virtual_machine_scale_set_id": "",
             "vtpm_enabled": false,
             "zone": ""
@@ -1060,13 +1060,13 @@
             [
               {
                 "type": "get_attr",
-                "value": "custom_data"
+                "value": "admin_password"
               }
             ],
             [
               {
                 "type": "get_attr",
-                "value": "admin_password"
+                "value": "custom_data"
               }
             ]
           ],
@@ -1121,7 +1121,7 @@
                 "diff_disk_settings": [],
                 "disk_encryption_set_id": "",
                 "disk_size_gb": 30,
-                "name": "webapp04vm_disk1_f7b07d9abe404c40beb30320ae4fd5de",
+                "name": "webapp04vm_disk1_1c6dcf8d24b84c94b7fc148c8f288f69",
                 "storage_account_type": "Standard_LRS",
                 "write_accelerator_enabled": false
               }
@@ -1155,7 +1155,7 @@
             "termination_notification": null,
             "timeouts": null,
             "user_data": "",
-            "virtual_machine_id": "b7d1a210-cba0-4b26-92d4-01ccd49e6177",
+            "virtual_machine_id": "dd52c9ba-6c28-4b6b-98bc-eb51eb990db6",
             "virtual_machine_scale_set_id": "",
             "vtpm_enabled": false,
             "zone": ""
@@ -1202,7 +1202,7 @@
             "dns_servers": [],
             "edge_zone": "",
             "flow_timeout_in_minutes": 0,
-            "guid": "1aeceeec-b600-4fd8-b8af-409eae029ed0",
+            "guid": "27ee18b0-13dd-45b3-b8e0-e98cd9db2ec5",
             "id": "/subscriptions/3e55e921-1317-405e-9b21-3a5455dac609/resourceGroups/eastUS01RG/providers/Microsoft.Network/virtualNetworks/eastUS01Vnet",
             "location": "eastus",
             "name": "eastUS01Vnet",
@@ -1239,7 +1239,7 @@
             "dns_servers": [],
             "edge_zone": "",
             "flow_timeout_in_minutes": 0,
-            "guid": "a11fd01a-9f39-4b67-8c8e-84ab6e44f556",
+            "guid": "e6878d6f-a77b-407f-a8c7-2605121dde78",
             "id": "/subscriptions/3e55e921-1317-405e-9b21-3a5455dac609/resourceGroups/france01RG/providers/Microsoft.Network/virtualNetworks/france01Vnet",
             "location": "francecentral",
             "name": "france01Vnet",
@@ -1276,7 +1276,7 @@
             "dns_servers": [],
             "edge_zone": "",
             "flow_timeout_in_minutes": 0,
-            "guid": "28c1567d-5e2a-4f33-8c66-e8ab455ddca3",
+            "guid": "4b8219dc-e87a-4e0b-812f-583ca3b911bc",
             "id": "/subscriptions/3e55e921-1317-405e-9b21-3a5455dac609/resourceGroups/westEurope01rg/providers/Microsoft.Network/virtualNetworks/westEurope01Vnet",
             "location": "westeurope",
             "name": "westEurope01Vnet",
@@ -1291,6 +1291,134 @@
           "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxODAwMDAwMDAwMDAwLCJkZWxldGUiOjE4MDAwMDAwMDAwMDAsInJlYWQiOjMwMDAwMDAwMDAwMCwidXBkYXRlIjoxODAwMDAwMDAwMDAwfX0=",
           "dependencies": [
             "module.Resource_Group.azurerm_resource_group.Hub01RG"
+          ]
+        }
+      ]
+    },
+    {
+      "module": "module.Vnet",
+      "mode": "managed",
+      "type": "azurerm_virtual_network_peering",
+      "name": "peering_EastUS2WestEurope",
+      "provider": "provider[\"registry.terraform.io/hashicorp/azurerm\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "allow_forwarded_traffic": true,
+            "allow_gateway_transit": false,
+            "allow_virtual_network_access": true,
+            "id": "/subscriptions/3e55e921-1317-405e-9b21-3a5455dac609/resourceGroups/eastUS01RG/providers/Microsoft.Network/virtualNetworks/eastUS01Vnet/virtualNetworkPeerings/peering_EastUS2WestEurope",
+            "name": "peering_EastUS2WestEurope",
+            "remote_virtual_network_id": "/subscriptions/3e55e921-1317-405e-9b21-3a5455dac609/resourceGroups/westEurope01rg/providers/Microsoft.Network/virtualNetworks/westEurope01Vnet",
+            "resource_group_name": "eastUS01RG",
+            "timeouts": null,
+            "use_remote_gateways": false,
+            "virtual_network_name": "eastUS01Vnet"
+          },
+          "sensitive_attributes": [],
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxODAwMDAwMDAwMDAwLCJkZWxldGUiOjE4MDAwMDAwMDAwMDAsInJlYWQiOjMwMDAwMDAwMDAwMCwidXBkYXRlIjoxODAwMDAwMDAwMDAwfX0=",
+          "dependencies": [
+            "module.Resource_Group.azurerm_resource_group.Hub01RG",
+            "module.Resource_Group.azurerm_resource_group.eastUS01RG",
+            "module.Vnet.azurerm_virtual_network.eastUS01Vnet",
+            "module.Vnet.azurerm_virtual_network.westEurope01Vnet"
+          ]
+        }
+      ]
+    },
+    {
+      "module": "module.Vnet",
+      "mode": "managed",
+      "type": "azurerm_virtual_network_peering",
+      "name": "peering_France2WestEurope",
+      "provider": "provider[\"registry.terraform.io/hashicorp/azurerm\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "allow_forwarded_traffic": true,
+            "allow_gateway_transit": false,
+            "allow_virtual_network_access": true,
+            "id": "/subscriptions/3e55e921-1317-405e-9b21-3a5455dac609/resourceGroups/france01RG/providers/Microsoft.Network/virtualNetworks/france01Vnet/virtualNetworkPeerings/peering_France2WestEurope",
+            "name": "peering_France2WestEurope",
+            "remote_virtual_network_id": "/subscriptions/3e55e921-1317-405e-9b21-3a5455dac609/resourceGroups/westEurope01rg/providers/Microsoft.Network/virtualNetworks/westEurope01Vnet",
+            "resource_group_name": "france01RG",
+            "timeouts": null,
+            "use_remote_gateways": false,
+            "virtual_network_name": "france01Vnet"
+          },
+          "sensitive_attributes": [],
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxODAwMDAwMDAwMDAwLCJkZWxldGUiOjE4MDAwMDAwMDAwMDAsInJlYWQiOjMwMDAwMDAwMDAwMCwidXBkYXRlIjoxODAwMDAwMDAwMDAwfX0=",
+          "dependencies": [
+            "module.Resource_Group.azurerm_resource_group.Hub01RG",
+            "module.Resource_Group.azurerm_resource_group.france01RG",
+            "module.Vnet.azurerm_virtual_network.france01Vnet",
+            "module.Vnet.azurerm_virtual_network.westEurope01Vnet"
+          ]
+        }
+      ]
+    },
+    {
+      "module": "module.Vnet",
+      "mode": "managed",
+      "type": "azurerm_virtual_network_peering",
+      "name": "peering_WestEurope2EastUS",
+      "provider": "provider[\"registry.terraform.io/hashicorp/azurerm\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "allow_forwarded_traffic": true,
+            "allow_gateway_transit": false,
+            "allow_virtual_network_access": true,
+            "id": "/subscriptions/3e55e921-1317-405e-9b21-3a5455dac609/resourceGroups/westEurope01rg/providers/Microsoft.Network/virtualNetworks/westEurope01Vnet/virtualNetworkPeerings/peering_WestEurope2EastUS",
+            "name": "peering_WestEurope2EastUS",
+            "remote_virtual_network_id": "/subscriptions/3e55e921-1317-405e-9b21-3a5455dac609/resourceGroups/eastUS01RG/providers/Microsoft.Network/virtualNetworks/eastUS01Vnet",
+            "resource_group_name": "westEurope01rg",
+            "timeouts": null,
+            "use_remote_gateways": false,
+            "virtual_network_name": "westEurope01Vnet"
+          },
+          "sensitive_attributes": [],
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxODAwMDAwMDAwMDAwLCJkZWxldGUiOjE4MDAwMDAwMDAwMDAsInJlYWQiOjMwMDAwMDAwMDAwMCwidXBkYXRlIjoxODAwMDAwMDAwMDAwfX0=",
+          "dependencies": [
+            "module.Resource_Group.azurerm_resource_group.Hub01RG",
+            "module.Resource_Group.azurerm_resource_group.eastUS01RG",
+            "module.Vnet.azurerm_virtual_network.eastUS01Vnet",
+            "module.Vnet.azurerm_virtual_network.westEurope01Vnet"
+          ]
+        }
+      ]
+    },
+    {
+      "module": "module.Vnet",
+      "mode": "managed",
+      "type": "azurerm_virtual_network_peering",
+      "name": "peering_WestEurope2France",
+      "provider": "provider[\"registry.terraform.io/hashicorp/azurerm\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "allow_forwarded_traffic": true,
+            "allow_gateway_transit": false,
+            "allow_virtual_network_access": true,
+            "id": "/subscriptions/3e55e921-1317-405e-9b21-3a5455dac609/resourceGroups/westEurope01rg/providers/Microsoft.Network/virtualNetworks/westEurope01Vnet/virtualNetworkPeerings/peering_WestEurope2France",
+            "name": "peering_WestEurope2France",
+            "remote_virtual_network_id": "/subscriptions/3e55e921-1317-405e-9b21-3a5455dac609/resourceGroups/france01RG/providers/Microsoft.Network/virtualNetworks/france01Vnet",
+            "resource_group_name": "westEurope01rg",
+            "timeouts": null,
+            "use_remote_gateways": false,
+            "virtual_network_name": "westEurope01Vnet"
+          },
+          "sensitive_attributes": [],
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxODAwMDAwMDAwMDAwLCJkZWxldGUiOjE4MDAwMDAwMDAwMDAsInJlYWQiOjMwMDAwMDAwMDAwMCwidXBkYXRlIjoxODAwMDAwMDAwMDAwfX0=",
+          "dependencies": [
+            "module.Resource_Group.azurerm_resource_group.Hub01RG",
+            "module.Resource_Group.azurerm_resource_group.france01RG",
+            "module.Vnet.azurerm_virtual_network.france01Vnet",
+            "module.Vnet.azurerm_virtual_network.westEurope01Vnet"
           ]
         }
       ]
@@ -1312,7 +1440,7 @@
             "enable_ip_forwarding": false,
             "id": "/subscriptions/3e55e921-1317-405e-9b21-3a5455dac609/resourceGroups/westEurope01rg/providers/Microsoft.Network/networkInterfaces/ansible01NI",
             "internal_dns_name_label": "",
-            "internal_domain_name_suffix": "pvlmckbklyzu5ddg3cvukxo2ud.ax.internal.cloudapp.net",
+            "internal_domain_name_suffix": "1qmyes103afu3ajpla4khoirxe.ax.internal.cloudapp.net",
             "ip_configuration": [
               {
                 "gateway_load_balancer_frontend_ip_configuration_id": "",
@@ -1365,7 +1493,7 @@
             "enable_ip_forwarding": false,
             "id": "/subscriptions/3e55e921-1317-405e-9b21-3a5455dac609/resourceGroups/france01RG/providers/Microsoft.Network/networkInterfaces/webapp01NI",
             "internal_dns_name_label": "",
-            "internal_domain_name_suffix": "dlib5ijzt3tuxdeoqsvw2rhvkg.parx.internal.cloudapp.net",
+            "internal_domain_name_suffix": "n4gypzt1u35ubkgheycreho4pa.parx.internal.cloudapp.net",
             "ip_configuration": [
               {
                 "gateway_load_balancer_frontend_ip_configuration_id": "",
@@ -1417,7 +1545,7 @@
             "enable_ip_forwarding": false,
             "id": "/subscriptions/3e55e921-1317-405e-9b21-3a5455dac609/resourceGroups/france01RG/providers/Microsoft.Network/networkInterfaces/webapp02NI",
             "internal_dns_name_label": "",
-            "internal_domain_name_suffix": "dlib5ijzt3tuxdeoqsvw2rhvkg.parx.internal.cloudapp.net",
+            "internal_domain_name_suffix": "n4gypzt1u35ubkgheycreho4pa.parx.internal.cloudapp.net",
             "ip_configuration": [
               {
                 "gateway_load_balancer_frontend_ip_configuration_id": "",
@@ -1469,7 +1597,7 @@
             "enable_ip_forwarding": false,
             "id": "/subscriptions/3e55e921-1317-405e-9b21-3a5455dac609/resourceGroups/eastUS01RG/providers/Microsoft.Network/networkInterfaces/webapp03NI",
             "internal_dns_name_label": "",
-            "internal_domain_name_suffix": "3txoygqaw1me5ofpicpk2au40a.bx.internal.cloudapp.net",
+            "internal_domain_name_suffix": "wamo2j43cozuloha3ggntwzoyf.bx.internal.cloudapp.net",
             "ip_configuration": [
               {
                 "gateway_load_balancer_frontend_ip_configuration_id": "",
@@ -1521,7 +1649,7 @@
             "enable_ip_forwarding": false,
             "id": "/subscriptions/3e55e921-1317-405e-9b21-3a5455dac609/resourceGroups/eastUS01RG/providers/Microsoft.Network/networkInterfaces/webapp04NI",
             "internal_dns_name_label": "",
-            "internal_domain_name_suffix": "3txoygqaw1me5ofpicpk2au40a.bx.internal.cloudapp.net",
+            "internal_domain_name_suffix": "wamo2j43cozuloha3ggntwzoyf.bx.internal.cloudapp.net",
             "ip_configuration": [
               {
                 "gateway_load_balancer_frontend_ip_configuration_id": "",

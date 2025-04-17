@@ -1,5 +1,5 @@
 .terraform/
 .terraform.lock.hcl
 .terra*
-state
+state*
 modules.txt
