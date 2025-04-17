@@ -1,10 +1,498 @@
 {
   "version": 4,
   "terraform_version": "1.9.7",
-  "serial": 107,
+  "serial": 321,
   "lineage": "6befeca8-61c6-52e8-6446-fd3143e5d61d",
   "outputs": {},
   "resources": [
+    {
+      "module": "module.Ips",
+      "mode": "managed",
+      "type": "azurerm_public_ip",
+      "name": "EastUSLoadBalancerPubIP",
+      "provider": "provider[\"registry.terraform.io/hashicorp/azurerm\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "allocation_method": "Static",
+            "domain_name_label": null,
+            "edge_zone": "",
+            "fqdn": null,
+            "id": "/subscriptions/3e55e921-1317-405e-9b21-3a5455dac609/resourceGroups/eastUS01RG/providers/Microsoft.Network/publicIPAddresses/EastUSLoadBalancerPubIP",
+            "idle_timeout_in_minutes": 4,
+            "ip_address": "4.246.208.93",
+            "ip_tags": null,
+            "ip_version": "IPv4",
+            "location": "eastus",
+            "name": "EastUSLoadBalancerPubIP",
+            "public_ip_prefix_id": null,
+            "resource_group_name": "eastUS01RG",
+            "reverse_fqdn": null,
+            "sku": "Standard",
+            "sku_tier": "Regional",
+            "tags": null,
+            "timeouts": null,
+            "zones": null
+          },
+          "sensitive_attributes": [],
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxODAwMDAwMDAwMDAwLCJkZWxldGUiOjE4MDAwMDAwMDAwMDAsInJlYWQiOjMwMDAwMDAwMDAwMCwidXBkYXRlIjoxODAwMDAwMDAwMDAwfX0=",
+          "dependencies": [
+            "module.Resource_Group.azurerm_resource_group.eastUS01RG"
+          ]
+        }
+      ]
+    },
+    {
+      "module": "module.Ips",
+      "mode": "managed",
+      "type": "azurerm_public_ip",
+      "name": "FranceLoadBalancerPubIP",
+      "provider": "provider[\"registry.terraform.io/hashicorp/azurerm\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "allocation_method": "Static",
+            "domain_name_label": null,
+            "edge_zone": "",
+            "fqdn": null,
+            "id": "/subscriptions/3e55e921-1317-405e-9b21-3a5455dac609/resourceGroups/france01RG/providers/Microsoft.Network/publicIPAddresses/FranceLoadBalancerPubIP",
+            "idle_timeout_in_minutes": 4,
+            "ip_address": "4.251.107.206",
+            "ip_tags": null,
+            "ip_version": "IPv4",
+            "location": "francecentral",
+            "name": "FranceLoadBalancerPubIP",
+            "public_ip_prefix_id": null,
+            "resource_group_name": "france01RG",
+            "reverse_fqdn": null,
+            "sku": "Standard",
+            "sku_tier": "Regional",
+            "tags": null,
+            "timeouts": null,
+            "zones": null
+          },
+          "sensitive_attributes": [],
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxODAwMDAwMDAwMDAwLCJkZWxldGUiOjE4MDAwMDAwMDAwMDAsInJlYWQiOjMwMDAwMDAwMDAwMCwidXBkYXRlIjoxODAwMDAwMDAwMDAwfX0=",
+          "dependencies": [
+            "module.Resource_Group.azurerm_resource_group.france01RG"
+          ]
+        }
+      ]
+    },
+    {
+      "module": "module.LB",
+      "mode": "managed",
+      "type": "azurerm_lb",
+      "name": "EastUSLoadBalancer",
+      "provider": "provider[\"registry.terraform.io/hashicorp/azurerm\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "edge_zone": "",
+            "frontend_ip_configuration": [
+              {
+                "gateway_load_balancer_frontend_ip_configuration_id": "",
+                "id": "/subscriptions/3e55e921-1317-405e-9b21-3a5455dac609/resourceGroups/eastUS01RG/providers/Microsoft.Network/loadBalancers/EastUSLoadBalancer/frontendIPConfigurations/PublicEastUSFrontend",
+                "inbound_nat_rules": [],
+                "load_balancer_rules": [],
+                "name": "PublicEastUSFrontend",
+                "outbound_rules": [],
+                "private_ip_address": "",
+                "private_ip_address_allocation": "Dynamic",
+                "private_ip_address_version": "",
+                "public_ip_address_id": "/subscriptions/3e55e921-1317-405e-9b21-3a5455dac609/resourceGroups/eastUS01RG/providers/Microsoft.Network/publicIPAddresses/EastUSLoadBalancerPubIP",
+                "public_ip_prefix_id": "",
+                "subnet_id": "",
+                "zones": null
+              }
+            ],
+            "id": "/subscriptions/3e55e921-1317-405e-9b21-3a5455dac609/resourceGroups/eastUS01RG/providers/Microsoft.Network/loadBalancers/EastUSLoadBalancer",
+            "location": "eastus",
+            "name": "EastUSLoadBalancer",
+            "private_ip_address": "",
+            "private_ip_addresses": [],
+            "resource_group_name": "eastUS01RG",
+            "sku": "Standard",
+            "sku_tier": "Regional",
+            "tags": null,
+            "timeouts": null
+          },
+          "sensitive_attributes": [],
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxODAwMDAwMDAwMDAwLCJkZWxldGUiOjE4MDAwMDAwMDAwMDAsInJlYWQiOjMwMDAwMDAwMDAwMCwidXBkYXRlIjoxODAwMDAwMDAwMDAwfX0=",
+          "dependencies": [
+            "module.Ips.azurerm_public_ip.EastUSLoadBalancerPubIP",
+            "module.Resource_Group.azurerm_resource_group.eastUS01RG"
+          ]
+        }
+      ]
+    },
+    {
+      "module": "module.LB",
+      "mode": "managed",
+      "type": "azurerm_lb",
+      "name": "FranceLoadBalancer",
+      "provider": "provider[\"registry.terraform.io/hashicorp/azurerm\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "edge_zone": "",
+            "frontend_ip_configuration": [
+              {
+                "gateway_load_balancer_frontend_ip_configuration_id": "",
+                "id": "/subscriptions/3e55e921-1317-405e-9b21-3a5455dac609/resourceGroups/france01RG/providers/Microsoft.Network/loadBalancers/FranceLoadBalancer/frontendIPConfigurations/PublicFranceFrontend",
+                "inbound_nat_rules": [],
+                "load_balancer_rules": [],
+                "name": "PublicFranceFrontend",
+                "outbound_rules": [],
+                "private_ip_address": "",
+                "private_ip_address_allocation": "Dynamic",
+                "private_ip_address_version": "",
+                "public_ip_address_id": "/subscriptions/3e55e921-1317-405e-9b21-3a5455dac609/resourceGroups/france01RG/providers/Microsoft.Network/publicIPAddresses/FranceLoadBalancerPubIP",
+                "public_ip_prefix_id": "",
+                "subnet_id": "",
+                "zones": null
+              }
+            ],
+            "id": "/subscriptions/3e55e921-1317-405e-9b21-3a5455dac609/resourceGroups/france01RG/providers/Microsoft.Network/loadBalancers/FranceLoadBalancer",
+            "location": "francecentral",
+            "name": "FranceLoadBalancer",
+            "private_ip_address": "",
+            "private_ip_addresses": [],
+            "resource_group_name": "france01RG",
+            "sku": "Standard",
+            "sku_tier": "Regional",
+            "tags": null,
+            "timeouts": null
+          },
+          "sensitive_attributes": [],
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxODAwMDAwMDAwMDAwLCJkZWxldGUiOjE4MDAwMDAwMDAwMDAsInJlYWQiOjMwMDAwMDAwMDAwMCwidXBkYXRlIjoxODAwMDAwMDAwMDAwfX0=",
+          "dependencies": [
+            "module.Ips.azurerm_public_ip.FranceLoadBalancerPubIP",
+            "module.Resource_Group.azurerm_resource_group.france01RG"
+          ]
+        }
+      ]
+    },
+    {
+      "module": "module.LB",
+      "mode": "managed",
+      "type": "azurerm_lb_backend_address_pool",
+      "name": "EastUSLoadBalancerBackend",
+      "provider": "provider[\"registry.terraform.io/hashicorp/azurerm\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "backend_ip_configurations": [],
+            "id": "/subscriptions/3e55e921-1317-405e-9b21-3a5455dac609/resourceGroups/eastUS01RG/providers/Microsoft.Network/loadBalancers/EastUSLoadBalancer/backendAddressPools/EastUSLoadBalancerBackend",
+            "load_balancing_rules": [],
+            "loadbalancer_id": "/subscriptions/3e55e921-1317-405e-9b21-3a5455dac609/resourceGroups/eastUS01RG/providers/Microsoft.Network/loadBalancers/EastUSLoadBalancer",
+            "name": "EastUSLoadBalancerBackend",
+            "outbound_rules": [],
+            "timeouts": null,
+            "tunnel_interface": []
+          },
+          "sensitive_attributes": [],
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxODAwMDAwMDAwMDAwLCJkZWxldGUiOjE4MDAwMDAwMDAwMDAsInJlYWQiOjMwMDAwMDAwMDAwMCwidXBkYXRlIjoxODAwMDAwMDAwMDAwfX0=",
+          "dependencies": [
+            "module.Ips.azurerm_public_ip.EastUSLoadBalancerPubIP",
+            "module.LB.azurerm_lb.EastUSLoadBalancer",
+            "module.Resource_Group.azurerm_resource_group.eastUS01RG"
+          ]
+        }
+      ]
+    },
+    {
+      "module": "module.LB",
+      "mode": "managed",
+      "type": "azurerm_lb_backend_address_pool",
+      "name": "FranceLoadBalancerBackend",
+      "provider": "provider[\"registry.terraform.io/hashicorp/azurerm\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "backend_ip_configurations": [],
+            "id": "/subscriptions/3e55e921-1317-405e-9b21-3a5455dac609/resourceGroups/france01RG/providers/Microsoft.Network/loadBalancers/FranceLoadBalancer/backendAddressPools/FranceLoadBalancerBackend",
+            "load_balancing_rules": [],
+            "loadbalancer_id": "/subscriptions/3e55e921-1317-405e-9b21-3a5455dac609/resourceGroups/france01RG/providers/Microsoft.Network/loadBalancers/FranceLoadBalancer",
+            "name": "FranceLoadBalancerBackend",
+            "outbound_rules": [],
+            "timeouts": null,
+            "tunnel_interface": []
+          },
+          "sensitive_attributes": [],
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxODAwMDAwMDAwMDAwLCJkZWxldGUiOjE4MDAwMDAwMDAwMDAsInJlYWQiOjMwMDAwMDAwMDAwMCwidXBkYXRlIjoxODAwMDAwMDAwMDAwfX0=",
+          "dependencies": [
+            "module.Ips.azurerm_public_ip.FranceLoadBalancerPubIP",
+            "module.LB.azurerm_lb.FranceLoadBalancer",
+            "module.Resource_Group.azurerm_resource_group.france01RG"
+          ]
+        }
+      ]
+    },
+    {
+      "module": "module.LB",
+      "mode": "managed",
+      "type": "azurerm_lb_probe",
+      "name": "http_probe_EastUS",
+      "provider": "provider[\"registry.terraform.io/hashicorp/azurerm\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "id": "/subscriptions/3e55e921-1317-405e-9b21-3a5455dac609/resourceGroups/eastUS01RG/providers/Microsoft.Network/loadBalancers/EastUSLoadBalancer/probes/http-probe",
+            "interval_in_seconds": 5,
+            "load_balancer_rules": [],
+            "loadbalancer_id": "/subscriptions/3e55e921-1317-405e-9b21-3a5455dac609/resourceGroups/eastUS01RG/providers/Microsoft.Network/loadBalancers/EastUSLoadBalancer",
+            "name": "http-probe",
+            "number_of_probes": 2,
+            "port": 80,
+            "protocol": "Http",
+            "request_path": "/",
+            "timeouts": null
+          },
+          "sensitive_attributes": [],
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxODAwMDAwMDAwMDAwLCJkZWxldGUiOjE4MDAwMDAwMDAwMDAsInJlYWQiOjMwMDAwMDAwMDAwMCwidXBkYXRlIjoxODAwMDAwMDAwMDAwfX0=",
+          "dependencies": [
+            "module.Ips.azurerm_public_ip.EastUSLoadBalancerPubIP",
+            "module.LB.azurerm_lb.EastUSLoadBalancer",
+            "module.Resource_Group.azurerm_resource_group.eastUS01RG"
+          ]
+        }
+      ]
+    },
+    {
+      "module": "module.LB",
+      "mode": "managed",
+      "type": "azurerm_lb_probe",
+      "name": "http_probe_France",
+      "provider": "provider[\"registry.terraform.io/hashicorp/azurerm\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "id": "/subscriptions/3e55e921-1317-405e-9b21-3a5455dac609/resourceGroups/france01RG/providers/Microsoft.Network/loadBalancers/FranceLoadBalancer/probes/http-probe",
+            "interval_in_seconds": 5,
+            "load_balancer_rules": [],
+            "loadbalancer_id": "/subscriptions/3e55e921-1317-405e-9b21-3a5455dac609/resourceGroups/france01RG/providers/Microsoft.Network/loadBalancers/FranceLoadBalancer",
+            "name": "http-probe",
+            "number_of_probes": 2,
+            "port": 80,
+            "protocol": "Http",
+            "request_path": "/",
+            "timeouts": null
+          },
+          "sensitive_attributes": [],
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxODAwMDAwMDAwMDAwLCJkZWxldGUiOjE4MDAwMDAwMDAwMDAsInJlYWQiOjMwMDAwMDAwMDAwMCwidXBkYXRlIjoxODAwMDAwMDAwMDAwfX0=",
+          "dependencies": [
+            "module.Ips.azurerm_public_ip.FranceLoadBalancerPubIP",
+            "module.LB.azurerm_lb.FranceLoadBalancer",
+            "module.Resource_Group.azurerm_resource_group.france01RG"
+          ]
+        }
+      ]
+    },
+    {
+      "module": "module.LB",
+      "mode": "managed",
+      "type": "azurerm_lb_rule",
+      "name": "http_rule_EastUS",
+      "provider": "provider[\"registry.terraform.io/hashicorp/azurerm\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "backend_address_pool_ids": null,
+            "backend_port": 80,
+            "disable_outbound_snat": false,
+            "enable_floating_ip": false,
+            "enable_tcp_reset": false,
+            "frontend_ip_configuration_id": "/subscriptions/3e55e921-1317-405e-9b21-3a5455dac609/resourceGroups/eastUS01RG/providers/Microsoft.Network/loadBalancers/EastUSLoadBalancer/frontendIPConfigurations/PublicEastUSFrontend",
+            "frontend_ip_configuration_name": "PublicEastUSFrontend",
+            "frontend_port": 80,
+            "id": "/subscriptions/3e55e921-1317-405e-9b21-3a5455dac609/resourceGroups/eastUS01RG/providers/Microsoft.Network/loadBalancers/EastUSLoadBalancer/loadBalancingRules/HttpRule",
+            "idle_timeout_in_minutes": 4,
+            "load_distribution": "Default",
+            "loadbalancer_id": "/subscriptions/3e55e921-1317-405e-9b21-3a5455dac609/resourceGroups/eastUS01RG/providers/Microsoft.Network/loadBalancers/EastUSLoadBalancer",
+            "name": "HttpRule",
+            "probe_id": "/subscriptions/3e55e921-1317-405e-9b21-3a5455dac609/resourceGroups/eastUS01RG/providers/Microsoft.Network/loadBalancers/EastUSLoadBalancer/probes/http-probe",
+            "protocol": "Tcp",
+            "timeouts": null
+          },
+          "sensitive_attributes": [],
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxODAwMDAwMDAwMDAwLCJkZWxldGUiOjE4MDAwMDAwMDAwMDAsInJlYWQiOjMwMDAwMDAwMDAwMCwidXBkYXRlIjoxODAwMDAwMDAwMDAwfX0=",
+          "dependencies": [
+            "module.Ips.azurerm_public_ip.EastUSLoadBalancerPubIP",
+            "module.LB.azurerm_lb.EastUSLoadBalancer",
+            "module.LB.azurerm_lb_probe.http_probe_EastUS",
+            "module.Resource_Group.azurerm_resource_group.eastUS01RG"
+          ]
+        }
+      ]
+    },
+    {
+      "module": "module.LB",
+      "mode": "managed",
+      "type": "azurerm_lb_rule",
+      "name": "http_rule_France",
+      "provider": "provider[\"registry.terraform.io/hashicorp/azurerm\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "backend_address_pool_ids": null,
+            "backend_port": 80,
+            "disable_outbound_snat": false,
+            "enable_floating_ip": false,
+            "enable_tcp_reset": false,
+            "frontend_ip_configuration_id": "/subscriptions/3e55e921-1317-405e-9b21-3a5455dac609/resourceGroups/france01RG/providers/Microsoft.Network/loadBalancers/FranceLoadBalancer/frontendIPConfigurations/PublicFranceFrontend",
+            "frontend_ip_configuration_name": "PublicFranceFrontend",
+            "frontend_port": 80,
+            "id": "/subscriptions/3e55e921-1317-405e-9b21-3a5455dac609/resourceGroups/france01RG/providers/Microsoft.Network/loadBalancers/FranceLoadBalancer/loadBalancingRules/HttpRule",
+            "idle_timeout_in_minutes": 4,
+            "load_distribution": "Default",
+            "loadbalancer_id": "/subscriptions/3e55e921-1317-405e-9b21-3a5455dac609/resourceGroups/france01RG/providers/Microsoft.Network/loadBalancers/FranceLoadBalancer",
+            "name": "HttpRule",
+            "probe_id": "/subscriptions/3e55e921-1317-405e-9b21-3a5455dac609/resourceGroups/france01RG/providers/Microsoft.Network/loadBalancers/FranceLoadBalancer/probes/http-probe",
+            "protocol": "Tcp",
+            "timeouts": null
+          },
+          "sensitive_attributes": [],
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxODAwMDAwMDAwMDAwLCJkZWxldGUiOjE4MDAwMDAwMDAwMDAsInJlYWQiOjMwMDAwMDAwMDAwMCwidXBkYXRlIjoxODAwMDAwMDAwMDAwfX0=",
+          "dependencies": [
+            "module.Ips.azurerm_public_ip.FranceLoadBalancerPubIP",
+            "module.LB.azurerm_lb.FranceLoadBalancer",
+            "module.LB.azurerm_lb_probe.http_probe_France",
+            "module.Resource_Group.azurerm_resource_group.france01RG"
+          ]
+        }
+      ]
+    },
+    {
+      "module": "module.LB",
+      "mode": "managed",
+      "type": "azurerm_network_interface_backend_address_pool_association",
+      "name": "ipconfig1_web01",
+      "provider": "provider[\"registry.terraform.io/hashicorp/azurerm\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "backend_address_pool_id": "/subscriptions/3e55e921-1317-405e-9b21-3a5455dac609/resourceGroups/france01RG/providers/Microsoft.Network/loadBalancers/FranceLoadBalancer/backendAddressPools/FranceLoadBalancerBackend",
+            "id": "/subscriptions/3e55e921-1317-405e-9b21-3a5455dac609/resourceGroups/france01RG/providers/Microsoft.Network/networkInterfaces/webapp01NI/ipConfigurations/internal|/subscriptions/3e55e921-1317-405e-9b21-3a5455dac609/resourceGroups/france01RG/providers/Microsoft.Network/loadBalancers/FranceLoadBalancer/backendAddressPools/FranceLoadBalancerBackend",
+            "ip_configuration_name": "internal",
+            "network_interface_id": "/subscriptions/3e55e921-1317-405e-9b21-3a5455dac609/resourceGroups/france01RG/providers/Microsoft.Network/networkInterfaces/webapp01NI",
+            "timeouts": null
+          },
+          "sensitive_attributes": [],
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxODAwMDAwMDAwMDAwLCJkZWxldGUiOjE4MDAwMDAwMDAwMDAsInJlYWQiOjMwMDAwMDAwMDAwMCwidXBkYXRlIjoxODAwMDAwMDAwMDAwfX0=",
+          "dependencies": [
+            "module.Ips.azurerm_public_ip.FranceLoadBalancerPubIP",
+            "module.LB.azurerm_lb.FranceLoadBalancer",
+            "module.LB.azurerm_lb_backend_address_pool.FranceLoadBalancerBackend",
+            "module.Resource_Group.azurerm_resource_group.france01RG",
+            "module.Subnet.azurerm_subnet.webApp01Subnet",
+            "module.Vnet.azurerm_virtual_network.france01Vnet",
+            "module.nic.azurerm_network_interface.webapp01NI"
+          ]
+        }
+      ]
+    },
+    {
+      "module": "module.LB",
+      "mode": "managed",
+      "type": "azurerm_network_interface_backend_address_pool_association",
+      "name": "ipconfig1_web02",
+      "provider": "provider[\"registry.terraform.io/hashicorp/azurerm\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "backend_address_pool_id": "/subscriptions/3e55e921-1317-405e-9b21-3a5455dac609/resourceGroups/france01RG/providers/Microsoft.Network/loadBalancers/FranceLoadBalancer/backendAddressPools/FranceLoadBalancerBackend",
+            "id": "/subscriptions/3e55e921-1317-405e-9b21-3a5455dac609/resourceGroups/france01RG/providers/Microsoft.Network/networkInterfaces/webapp02NI/ipConfigurations/internal|/subscriptions/3e55e921-1317-405e-9b21-3a5455dac609/resourceGroups/france01RG/providers/Microsoft.Network/loadBalancers/FranceLoadBalancer/backendAddressPools/FranceLoadBalancerBackend",
+            "ip_configuration_name": "internal",
+            "network_interface_id": "/subscriptions/3e55e921-1317-405e-9b21-3a5455dac609/resourceGroups/france01RG/providers/Microsoft.Network/networkInterfaces/webapp02NI",
+            "timeouts": null
+          },
+          "sensitive_attributes": [],
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxODAwMDAwMDAwMDAwLCJkZWxldGUiOjE4MDAwMDAwMDAwMDAsInJlYWQiOjMwMDAwMDAwMDAwMCwidXBkYXRlIjoxODAwMDAwMDAwMDAwfX0=",
+          "dependencies": [
+            "module.Ips.azurerm_public_ip.FranceLoadBalancerPubIP",
+            "module.LB.azurerm_lb.FranceLoadBalancer",
+            "module.LB.azurerm_lb_backend_address_pool.FranceLoadBalancerBackend",
+            "module.Resource_Group.azurerm_resource_group.france01RG",
+            "module.Subnet.azurerm_subnet.webApp01Subnet",
+            "module.Vnet.azurerm_virtual_network.france01Vnet",
+            "module.nic.azurerm_network_interface.webapp02NI"
+          ]
+        }
+      ]
+    },
+    {
+      "module": "module.LB",
+      "mode": "managed",
+      "type": "azurerm_network_interface_backend_address_pool_association",
+      "name": "ipconfig1_web03",
+      "provider": "provider[\"registry.terraform.io/hashicorp/azurerm\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "backend_address_pool_id": "/subscriptions/3e55e921-1317-405e-9b21-3a5455dac609/resourceGroups/eastUS01RG/providers/Microsoft.Network/loadBalancers/EastUSLoadBalancer/backendAddressPools/EastUSLoadBalancerBackend",
+            "id": "/subscriptions/3e55e921-1317-405e-9b21-3a5455dac609/resourceGroups/eastUS01RG/providers/Microsoft.Network/networkInterfaces/webapp03NI/ipConfigurations/internal|/subscriptions/3e55e921-1317-405e-9b21-3a5455dac609/resourceGroups/eastUS01RG/providers/Microsoft.Network/loadBalancers/EastUSLoadBalancer/backendAddressPools/EastUSLoadBalancerBackend",
+            "ip_configuration_name": "internal",
+            "network_interface_id": "/subscriptions/3e55e921-1317-405e-9b21-3a5455dac609/resourceGroups/eastUS01RG/providers/Microsoft.Network/networkInterfaces/webapp03NI",
+            "timeouts": null
+          },
+          "sensitive_attributes": [],
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxODAwMDAwMDAwMDAwLCJkZWxldGUiOjE4MDAwMDAwMDAwMDAsInJlYWQiOjMwMDAwMDAwMDAwMCwidXBkYXRlIjoxODAwMDAwMDAwMDAwfX0=",
+          "dependencies": [
+            "module.Ips.azurerm_public_ip.EastUSLoadBalancerPubIP",
+            "module.LB.azurerm_lb.EastUSLoadBalancer",
+            "module.LB.azurerm_lb_backend_address_pool.EastUSLoadBalancerBackend",
+            "module.Resource_Group.azurerm_resource_group.eastUS01RG",
+            "module.Subnet.azurerm_subnet.web02Subnet",
+            "module.Vnet.azurerm_virtual_network.eastUS01Vnet",
+            "module.nic.azurerm_network_interface.webapp03NI"
+          ]
+        }
+      ]
+    },
+    {
+      "module": "module.LB",
+      "mode": "managed",
+      "type": "azurerm_network_interface_backend_address_pool_association",
+      "name": "ipconfig1_web04",
+      "provider": "provider[\"registry.terraform.io/hashicorp/azurerm\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "backend_address_pool_id": "/subscriptions/3e55e921-1317-405e-9b21-3a5455dac609/resourceGroups/eastUS01RG/providers/Microsoft.Network/loadBalancers/EastUSLoadBalancer/backendAddressPools/EastUSLoadBalancerBackend",
+            "id": "/subscriptions/3e55e921-1317-405e-9b21-3a5455dac609/resourceGroups/eastUS01RG/providers/Microsoft.Network/networkInterfaces/webapp04NI/ipConfigurations/internal|/subscriptions/3e55e921-1317-405e-9b21-3a5455dac609/resourceGroups/eastUS01RG/providers/Microsoft.Network/loadBalancers/EastUSLoadBalancer/backendAddressPools/EastUSLoadBalancerBackend",
+            "ip_configuration_name": "internal",
+            "network_interface_id": "/subscriptions/3e55e921-1317-405e-9b21-3a5455dac609/resourceGroups/eastUS01RG/providers/Microsoft.Network/networkInterfaces/webapp04NI",
+            "timeouts": null
+          },
+          "sensitive_attributes": [],
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxODAwMDAwMDAwMDAwLCJkZWxldGUiOjE4MDAwMDAwMDAwMDAsInJlYWQiOjMwMDAwMDAwMDAwMCwidXBkYXRlIjoxODAwMDAwMDAwMDAwfX0=",
+          "dependencies": [
+            "module.Ips.azurerm_public_ip.EastUSLoadBalancerPubIP",
+            "module.LB.azurerm_lb.EastUSLoadBalancer",
+            "module.LB.azurerm_lb_backend_address_pool.EastUSLoadBalancerBackend",
+            "module.Resource_Group.azurerm_resource_group.eastUS01RG",
+            "module.Subnet.azurerm_subnet.web02Subnet",
+            "module.Vnet.azurerm_virtual_network.eastUS01Vnet",
+            "module.nic.azurerm_network_interface.webapp04NI"
+          ]
+        }
+      ]
+    },
     {
       "module": "module.Resource_Group",
       "mode": "managed",
@@ -93,8 +581,8 @@
             "id": "/subscriptions/3e55e921-1317-405e-9b21-3a5455dac609/resourceGroups/westEurope01rg/providers/Microsoft.Network/virtualNetworks/westEurope01Vnet/subnets/ansible01Subnet",
             "name": "ansible01Subnet",
             "resource_group_name": "westEurope01rg",
-            "service_endpoint_policy_ids": [],
-            "service_endpoints": [],
+            "service_endpoint_policy_ids": null,
+            "service_endpoints": null,
             "timeouts": null,
             "virtual_network_name": "westEurope01Vnet"
           },
@@ -126,8 +614,8 @@
             "id": "/subscriptions/3e55e921-1317-405e-9b21-3a5455dac609/resourceGroups/eastUS01RG/providers/Microsoft.Network/virtualNetworks/eastUS01Vnet/subnets/web02Subnet",
             "name": "web02Subnet",
             "resource_group_name": "eastUS01RG",
-            "service_endpoint_policy_ids": [],
-            "service_endpoints": [],
+            "service_endpoint_policy_ids": null,
+            "service_endpoints": null,
             "timeouts": null,
             "virtual_network_name": "eastUS01Vnet"
           },
@@ -159,8 +647,8 @@
             "id": "/subscriptions/3e55e921-1317-405e-9b21-3a5455dac609/resourceGroups/france01RG/providers/Microsoft.Network/virtualNetworks/france01Vnet/subnets/webApp01Subnet",
             "name": "webApp01Subnet",
             "resource_group_name": "france01RG",
-            "service_endpoint_policy_ids": [],
-            "service_endpoints": [],
+            "service_endpoint_policy_ids": null,
+            "service_endpoints": null,
             "timeouts": null,
             "virtual_network_name": "france01Vnet"
           },
@@ -214,7 +702,7 @@
                 "diff_disk_settings": [],
                 "disk_encryption_set_id": "",
                 "disk_size_gb": 30,
-                "name": "anssible01vm_disk1_6eb5ea5244084ff3902856d39fe8234b",
+                "name": "anssible01vm_disk1_ccb69a43fdea45e4b752bf255fa5046a",
                 "storage_account_type": "Standard_LRS",
                 "write_accelerator_enabled": false
               }
@@ -229,9 +717,9 @@
             ],
             "provision_vm_agent": true,
             "proximity_placement_group_id": "",
-            "public_ip_address": "13.80.240.71",
+            "public_ip_address": "51.136.49.36",
             "public_ip_addresses": [
-              "13.80.240.71"
+              "51.136.49.36"
             ],
             "resource_group_name": "westEurope01rg",
             "secret": [],
@@ -250,7 +738,7 @@
             "termination_notification": null,
             "timeouts": null,
             "user_data": "",
-            "virtual_machine_id": "2c176c08-2079-46c4-8592-9f66a06ff9bb",
+            "virtual_machine_id": "c77fbc26-586d-4627-86f9-c7569de06825",
             "virtual_machine_scale_set_id": "",
             "vtpm_enabled": false,
             "zone": ""
@@ -259,13 +747,13 @@
             [
               {
                 "type": "get_attr",
-                "value": "admin_password"
+                "value": "custom_data"
               }
             ],
             [
               {
                 "type": "get_attr",
-                "value": "custom_data"
+                "value": "admin_password"
               }
             ]
           ],
@@ -321,7 +809,7 @@
                 "diff_disk_settings": [],
                 "disk_encryption_set_id": "",
                 "disk_size_gb": 30,
-                "name": "webapp01vm_disk1_aa8c0417da294e95ab8588e90f9e5fe4",
+                "name": "webapp01vm_disk1_3532ec5989ce40e29da1004994b7150b",
                 "storage_account_type": "Standard_LRS",
                 "write_accelerator_enabled": false
               }
@@ -355,7 +843,7 @@
             "termination_notification": null,
             "timeouts": null,
             "user_data": "",
-            "virtual_machine_id": "a99fec26-3ae3-4884-935c-a9f3623b06c3",
+            "virtual_machine_id": "19c954fe-5e53-45c5-8ca0-b49ad7f23b2e",
             "virtual_machine_scale_set_id": "",
             "vtpm_enabled": false,
             "zone": ""
@@ -364,13 +852,13 @@
             [
               {
                 "type": "get_attr",
-                "value": "admin_password"
+                "value": "custom_data"
               }
             ],
             [
               {
                 "type": "get_attr",
-                "value": "custom_data"
+                "value": "admin_password"
               }
             ]
           ],
@@ -425,7 +913,7 @@
                 "diff_disk_settings": [],
                 "disk_encryption_set_id": "",
                 "disk_size_gb": 30,
-                "name": "webapp02vm_disk1_950af8da2dd34e11bf78aae905f45226",
+                "name": "webapp02vm_disk1_af59e5e0ad504a9f927fe26f6e6d5e62",
                 "storage_account_type": "Standard_LRS",
                 "write_accelerator_enabled": false
               }
@@ -459,7 +947,7 @@
             "termination_notification": null,
             "timeouts": null,
             "user_data": "",
-            "virtual_machine_id": "09214920-9955-4d45-8412-2c3f31d9532e",
+            "virtual_machine_id": "4f9d7a60-cfd4-45dd-8b7b-e6da51a6edef",
             "virtual_machine_scale_set_id": "",
             "vtpm_enabled": false,
             "zone": ""
@@ -468,13 +956,13 @@
             [
               {
                 "type": "get_attr",
-                "value": "admin_password"
+                "value": "custom_data"
               }
             ],
             [
               {
                 "type": "get_attr",
-                "value": "custom_data"
+                "value": "admin_password"
               }
             ]
           ],
@@ -529,7 +1017,7 @@
                 "diff_disk_settings": [],
                 "disk_encryption_set_id": "",
                 "disk_size_gb": 30,
-                "name": "webapp03vm_disk1_8c634bad8308454ca49cb5d7ec920d41",
+                "name": "webapp03vm_disk1_bf1e579eeb5247fead41903741deff0b",
                 "storage_account_type": "Standard_LRS",
                 "write_accelerator_enabled": false
               }
@@ -563,7 +1051,7 @@
             "termination_notification": null,
             "timeouts": null,
             "user_data": "",
-            "virtual_machine_id": "817a8ab0-a0ae-4fe7-adc1-3d2c8e4e97e9",
+            "virtual_machine_id": "cfdd4382-7334-4c75-8317-7d2a6994ad83",
             "virtual_machine_scale_set_id": "",
             "vtpm_enabled": false,
             "zone": ""
@@ -633,7 +1121,7 @@
                 "diff_disk_settings": [],
                 "disk_encryption_set_id": "",
                 "disk_size_gb": 30,
-                "name": "webapp04vm_disk1_46c2a62c86be4e10b2b0c219f1405fde",
+                "name": "webapp04vm_disk1_f7b07d9abe404c40beb30320ae4fd5de",
                 "storage_account_type": "Standard_LRS",
                 "write_accelerator_enabled": false
               }
@@ -667,7 +1155,7 @@
             "termination_notification": null,
             "timeouts": null,
             "user_data": "",
-            "virtual_machine_id": "30df0207-e528-494c-a2f1-5ddf20d1b597",
+            "virtual_machine_id": "b7d1a210-cba0-4b26-92d4-01ccd49e6177",
             "virtual_machine_scale_set_id": "",
             "vtpm_enabled": false,
             "zone": ""
@@ -714,19 +1202,12 @@
             "dns_servers": [],
             "edge_zone": "",
             "flow_timeout_in_minutes": 0,
-            "guid": "05157cd0-a025-4b29-afce-fddadfcc983a",
+            "guid": "1aeceeec-b600-4fd8-b8af-409eae029ed0",
             "id": "/subscriptions/3e55e921-1317-405e-9b21-3a5455dac609/resourceGroups/eastUS01RG/providers/Microsoft.Network/virtualNetworks/eastUS01Vnet",
             "location": "eastus",
             "name": "eastUS01Vnet",
             "resource_group_name": "eastUS01RG",
-            "subnet": [
-              {
-                "address_prefix": "192.168.2.0/24",
-                "id": "/subscriptions/3e55e921-1317-405e-9b21-3a5455dac609/resourceGroups/eastUS01RG/providers/Microsoft.Network/virtualNetworks/eastUS01Vnet/subnets/web02Subnet",
-                "name": "web02Subnet",
-                "security_group": "/subscriptions/3e55e921-1317-405e-9b21-3a5455dac609/resourceGroups/eastUS01RG/providers/Microsoft.Network/networkSecurityGroups/webNSG02"
-              }
-            ],
+            "subnet": [],
             "tags": {
               "Project": "terraform_ansible"
             },
@@ -758,19 +1239,12 @@
             "dns_servers": [],
             "edge_zone": "",
             "flow_timeout_in_minutes": 0,
-            "guid": "e74dd3a7-24b0-46f2-afec-d0ee17a8f540",
+            "guid": "a11fd01a-9f39-4b67-8c8e-84ab6e44f556",
             "id": "/subscriptions/3e55e921-1317-405e-9b21-3a5455dac609/resourceGroups/france01RG/providers/Microsoft.Network/virtualNetworks/france01Vnet",
             "location": "francecentral",
             "name": "france01Vnet",
             "resource_group_name": "france01RG",
-            "subnet": [
-              {
-                "address_prefix": "10.0.1.0/24",
-                "id": "/subscriptions/3e55e921-1317-405e-9b21-3a5455dac609/resourceGroups/france01RG/providers/Microsoft.Network/virtualNetworks/france01Vnet/subnets/webApp01Subnet",
-                "name": "webApp01Subnet",
-                "security_group": "/subscriptions/3e55e921-1317-405e-9b21-3a5455dac609/resourceGroups/france01RG/providers/Microsoft.Network/networkSecurityGroups/webNSG01"
-              }
-            ],
+            "subnet": [],
             "tags": {
               "Project": "terraform_ansible"
             },
@@ -802,19 +1276,12 @@
             "dns_servers": [],
             "edge_zone": "",
             "flow_timeout_in_minutes": 0,
-            "guid": "59fb72ee-56a9-4de1-8851-5b6a7c085f23",
+            "guid": "28c1567d-5e2a-4f33-8c66-e8ab455ddca3",
             "id": "/subscriptions/3e55e921-1317-405e-9b21-3a5455dac609/resourceGroups/westEurope01rg/providers/Microsoft.Network/virtualNetworks/westEurope01Vnet",
             "location": "westeurope",
             "name": "westEurope01Vnet",
             "resource_group_name": "westEurope01rg",
-            "subnet": [
-              {
-                "address_prefix": "172.0.1.0/24",
-                "id": "/subscriptions/3e55e921-1317-405e-9b21-3a5455dac609/resourceGroups/westEurope01rg/providers/Microsoft.Network/virtualNetworks/westEurope01Vnet/subnets/ansible01Subnet",
-                "name": "ansible01Subnet",
-                "security_group": "/subscriptions/3e55e921-1317-405e-9b21-3a5455dac609/resourceGroups/westEurope01rg/providers/Microsoft.Network/networkSecurityGroups/anisble01NSG"
-              }
-            ],
+            "subnet": [],
             "tags": {
               "Project": "terraform_ansible"
             },
@@ -845,7 +1312,7 @@
             "enable_ip_forwarding": false,
             "id": "/subscriptions/3e55e921-1317-405e-9b21-3a5455dac609/resourceGroups/westEurope01rg/providers/Microsoft.Network/networkInterfaces/ansible01NI",
             "internal_dns_name_label": "",
-            "internal_domain_name_suffix": "3zzpwwnjk1qu1ccrlnvhycc5ed.ax.internal.cloudapp.net",
+            "internal_domain_name_suffix": "pvlmckbklyzu5ddg3cvukxo2ud.ax.internal.cloudapp.net",
             "ip_configuration": [
               {
                 "gateway_load_balancer_frontend_ip_configuration_id": "",
@@ -866,7 +1333,7 @@
               "172.0.1.5"
             ],
             "resource_group_name": "westEurope01rg",
-            "tags": {},
+            "tags": null,
             "timeouts": null,
             "virtual_machine_id": ""
           },
@@ -898,7 +1365,7 @@
             "enable_ip_forwarding": false,
             "id": "/subscriptions/3e55e921-1317-405e-9b21-3a5455dac609/resourceGroups/france01RG/providers/Microsoft.Network/networkInterfaces/webapp01NI",
             "internal_dns_name_label": "",
-            "internal_domain_name_suffix": "u5ju1z3qetzenl5m0dxbpkhvia.parx.internal.cloudapp.net",
+            "internal_domain_name_suffix": "dlib5ijzt3tuxdeoqsvw2rhvkg.parx.internal.cloudapp.net",
             "ip_configuration": [
               {
                 "gateway_load_balancer_frontend_ip_configuration_id": "",
@@ -919,7 +1386,7 @@
               "10.0.1.4"
             ],
             "resource_group_name": "france01RG",
-            "tags": {},
+            "tags": null,
             "timeouts": null,
             "virtual_machine_id": ""
           },
@@ -950,7 +1417,7 @@
             "enable_ip_forwarding": false,
             "id": "/subscriptions/3e55e921-1317-405e-9b21-3a5455dac609/resourceGroups/france01RG/providers/Microsoft.Network/networkInterfaces/webapp02NI",
             "internal_dns_name_label": "",
-            "internal_domain_name_suffix": "u5ju1z3qetzenl5m0dxbpkhvia.parx.internal.cloudapp.net",
+            "internal_domain_name_suffix": "dlib5ijzt3tuxdeoqsvw2rhvkg.parx.internal.cloudapp.net",
             "ip_configuration": [
               {
                 "gateway_load_balancer_frontend_ip_configuration_id": "",
@@ -971,7 +1438,7 @@
               "10.0.1.5"
             ],
             "resource_group_name": "france01RG",
-            "tags": {},
+            "tags": null,
             "timeouts": null,
             "virtual_machine_id": ""
           },
@@ -1002,7 +1469,7 @@
             "enable_ip_forwarding": false,
             "id": "/subscriptions/3e55e921-1317-405e-9b21-3a5455dac609/resourceGroups/eastUS01RG/providers/Microsoft.Network/networkInterfaces/webapp03NI",
             "internal_dns_name_label": "",
-            "internal_domain_name_suffix": "0b4bkbjfuauuxl4o5xnn5teyhc.bx.internal.cloudapp.net",
+            "internal_domain_name_suffix": "3txoygqaw1me5ofpicpk2au40a.bx.internal.cloudapp.net",
             "ip_configuration": [
               {
                 "gateway_load_balancer_frontend_ip_configuration_id": "",
@@ -1023,7 +1490,7 @@
               "192.168.2.4"
             ],
             "resource_group_name": "eastUS01RG",
-            "tags": {},
+            "tags": null,
             "timeouts": null,
             "virtual_machine_id": ""
           },
@@ -1054,7 +1521,7 @@
             "enable_ip_forwarding": false,
             "id": "/subscriptions/3e55e921-1317-405e-9b21-3a5455dac609/resourceGroups/eastUS01RG/providers/Microsoft.Network/networkInterfaces/webapp04NI",
             "internal_dns_name_label": "",
-            "internal_domain_name_suffix": "0b4bkbjfuauuxl4o5xnn5teyhc.bx.internal.cloudapp.net",
+            "internal_domain_name_suffix": "3txoygqaw1me5ofpicpk2au40a.bx.internal.cloudapp.net",
             "ip_configuration": [
               {
                 "gateway_load_balancer_frontend_ip_configuration_id": "",
@@ -1075,7 +1542,7 @@
               "192.168.2.5"
             ],
             "resource_group_name": "eastUS01RG",
-            "tags": {},
+            "tags": null,
             "timeouts": null,
             "virtual_machine_id": ""
           },
@@ -1106,7 +1573,7 @@
             "id": "/subscriptions/3e55e921-1317-405e-9b21-3a5455dac609/resourceGroups/westEurope01rg/providers/Microsoft.Network/publicIPAddresses/ansilbe01PIP",
             "idle_timeout_in_minutes": 4,
             "ip_address": "",
-            "ip_tags": {},
+            "ip_tags": null,
             "ip_version": "IPv4",
             "location": "westeurope",
             "name": "ansilbe01PIP",
@@ -1115,9 +1582,9 @@
             "reverse_fqdn": null,
             "sku": "Basic",
             "sku_tier": "Regional",
-            "tags": {},
+            "tags": null,
             "timeouts": null,
-            "zones": []
+            "zones": null
           },
           "sensitive_attributes": [],
           "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxODAwMDAwMDAwMDAwLCJkZWxldGUiOjE4MDAwMDAwMDAwMDAsInJlYWQiOjMwMDAwMDAwMDAwMCwidXBkYXRlIjoxODAwMDAwMDAwMDAwfX0=",

@@ -95,3 +95,30 @@ module "Vms" {
   webapp04NIID = module.nic.webapp04NIID
   ansible01NIID = module.nic.ansible01NIID
 }
+
+module "Ips" {
+  source = "./modules/public_ip"
+
+  france01RGName        = module.Resource_Group.france01RGName
+  eastUS01RGName        = module.Resource_Group.eastUS01RGName
+
+  france01RGLocation        = module.Resource_Group.france01RGLocation
+  eastUS01RGLocation        = module.Resource_Group.eastUS01RGLocation
+}
+
+module "LB" {
+  source = "./modules/public_lb"
+  france01RGName        = module.Resource_Group.france01RGName
+  eastUS01RGName        = module.Resource_Group.eastUS01RGName
+
+  france01RGLocation        = module.Resource_Group.france01RGLocation
+  eastUS01RGLocation        = module.Resource_Group.eastUS01RGLocation
+  
+  FranceLoadBalancerPubIPID = module.Ips.FranceLoadBalancerPubIPID
+  EastUSLoadBalancerPubIPID = module.Ips.EastUSLoadBalancerPubIPID
+
+  webapp01NIID = module.nic.webapp01NIID
+  webapp02NIID = module.nic.webapp02NIID
+  webapp03NIID = module.nic.webapp03NIID
+  webapp04NIID = module.nic.webapp04NIID
+}
