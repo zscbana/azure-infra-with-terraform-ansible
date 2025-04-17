@@ -108,11 +108,16 @@ module "Ips" {
 
 module "LB" {
   source = "./modules/public_lb"
+  hubWestEurope01RGName = module.Resource_Group.hubWestEurope01RGName
   france01RGName        = module.Resource_Group.france01RGName
   eastUS01RGName        = module.Resource_Group.eastUS01RGName
 
+  hubWestEurope01RGLocation = module.Resource_Group.hubWestEurope01RGLocation
   france01RGLocation        = module.Resource_Group.france01RGLocation
   eastUS01RGLocation        = module.Resource_Group.eastUS01RGLocation
+
+  FranceLoadBalancerPubIP = module.Ips.FranceLoadBalancerPubIP
+  EastUSLoadBalancerPubIP = module.Ips.EastUSLoadBalancerPubIP
   
   FranceLoadBalancerPubIPID = module.Ips.FranceLoadBalancerPubIPID
   EastUSLoadBalancerPubIPID = module.Ips.EastUSLoadBalancerPubIPID

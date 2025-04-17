@@ -5,3 +5,11 @@ output "FranceLoadBalancerPubIPID" {
 output "EastUSLoadBalancerPubIPID" {
   value = azurerm_public_ip.EastUSLoadBalancerPubIP.id
 }
+
+output "FranceLoadBalancerPubIP" {
+  value = azurerm_public_ip.FranceLoadBalancerPubIP.ip_address
+}
+
+output "EastUSLoadBalancerPubIP" {
+  value = azurerm_public_ip.EastUSLoadBalancerPubIP.ip_address
+}

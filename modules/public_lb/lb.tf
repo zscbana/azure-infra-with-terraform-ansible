@@ -98,3 +98,45 @@ resource "azurerm_network_interface_backend_address_pool_association" "ipconfig1
   ip_configuration_name   = "internal"
   backend_address_pool_id = azurerm_lb_backend_address_pool.EastUSLoadBalancerBackend.id
 }
+
+# Traffic manager for global loadbalancing
+
+resource "azurerm_traffic_manager_profile" "Traffic-Manager01" {
+  name                   = "Traffic-Manager01"
+  resource_group_name    = var.hubWestEurope01RGName
+  traffic_routing_method = "Performance"
+
+  dns_config {
+    relative_name = "projectdomaintest5050"
+    ttl           = 100
+  }
+
+  monitor_config {
+    protocol                     = "HTTP"
+    port                         = 80
+    path                         = "/"
+    interval_in_seconds          = 30
+    timeout_in_seconds           = 9
+    tolerated_number_of_failures = 3
+  }
+
+  tags = {
+    environment = "Production"
+  }
+}
+
+resource "azurerm_traffic_manager_external_endpoint" "FranceEndpoint" {
+  name                 = "FranceEndpoint"
+  profile_id           = azurerm_traffic_manager_profile.Traffic-Manager01.id
+  endpoint_location = var.france01RGLocation
+  weight = 1
+  target               = var.FranceLoadBalancerPubIP
+}
+
+resource "azurerm_traffic_manager_external_endpoint" "EastUSEndpoint" {
+  name                 = "EastUSEndpoint"
+  profile_id           = azurerm_traffic_manager_profile.Traffic-Manager01.id
+  endpoint_location = var.eastUS01RGLocation
+  weight = 1
+  target               = var.EastUSLoadBalancerPubIP
+}
