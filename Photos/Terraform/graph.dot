@@ -1,11 +1,17 @@
 digraph G {
   rankdir = "RL";
   node [shape = rect, fontname = "sans-serif"];
+  subgraph "cluster_module.HubBastion" {
+    label = "module.HubBastion"
+    fontname = "sans-serif"
+    "module.HubBastion.azurerm_bastion_host.HubBastionHost" [label="azurerm_bastion_host.HubBastionHost"];
+  }
   subgraph "cluster_module.Ips" {
     label = "module.Ips"
     fontname = "sans-serif"
     "module.Ips.azurerm_public_ip.EastUSLoadBalancerPubIP" [label="azurerm_public_ip.EastUSLoadBalancerPubIP"];
     "module.Ips.azurerm_public_ip.FranceLoadBalancerPubIP" [label="azurerm_public_ip.FranceLoadBalancerPubIP"];
+    "module.Ips.azurerm_public_ip.HubBastionIP" [label="azurerm_public_ip.HubBastionIP"];
   }
   subgraph "cluster_module.LB" {
     label = "module.LB"
@@ -36,6 +42,7 @@ digraph G {
   subgraph "cluster_module.Subnet" {
     label = "module.Subnet"
     fontname = "sans-serif"
+    "module.Subnet.azurerm_subnet.HubBastionSubnet" [label="azurerm_subnet.HubBastionSubnet"];
     "module.Subnet.azurerm_subnet.ansible01Subnet" [label="azurerm_subnet.ansible01Subnet"];
     "module.Subnet.azurerm_subnet.web02Subnet" [label="azurerm_subnet.web02Subnet"];
     "module.Subnet.azurerm_subnet.webApp01Subnet" [label="azurerm_subnet.webApp01Subnet"];
@@ -80,8 +87,11 @@ digraph G {
     "module.nsg.azurerm_subnet_network_security_group_association.Asso02" [label="azurerm_subnet_network_security_group_association.Asso02"];
     "module.nsg.azurerm_subnet_network_security_group_association.ansibleAsso" [label="azurerm_subnet_network_security_group_association.ansibleAsso"];
   }
+  "module.HubBastion.azurerm_bastion_host.HubBastionHost" -> "module.Ips.azurerm_public_ip.HubBastionIP";
+  "module.HubBastion.azurerm_bastion_host.HubBastionHost" -> "module.Subnet.azurerm_subnet.HubBastionSubnet";
   "module.Ips.azurerm_public_ip.EastUSLoadBalancerPubIP" -> "module.Resource_Group.azurerm_resource_group.eastUS01RG";
   "module.Ips.azurerm_public_ip.FranceLoadBalancerPubIP" -> "module.Resource_Group.azurerm_resource_group.france01RG";
+  "module.Ips.azurerm_public_ip.HubBastionIP" -> "module.Resource_Group.azurerm_resource_group.Hub01RG";
   "module.LB.azurerm_lb.EastUSLoadBalancer" -> "module.Ips.azurerm_public_ip.EastUSLoadBalancerPubIP";
   "module.LB.azurerm_lb.FranceLoadBalancer" -> "module.Ips.azurerm_public_ip.FranceLoadBalancerPubIP";
   "module.LB.azurerm_lb_backend_address_pool.EastUSLoadBalancerBackend" -> "module.LB.azurerm_lb.EastUSLoadBalancer";
@@ -103,6 +113,7 @@ digraph G {
   "module.LB.azurerm_traffic_manager_external_endpoint.FranceEndpoint" -> "module.Ips.azurerm_public_ip.FranceLoadBalancerPubIP";
   "module.LB.azurerm_traffic_manager_external_endpoint.FranceEndpoint" -> "module.LB.azurerm_traffic_manager_profile.Traffic-Manager01";
   "module.LB.azurerm_traffic_manager_profile.Traffic-Manager01" -> "module.Resource_Group.azurerm_resource_group.Hub01RG";
+  "module.Subnet.azurerm_subnet.HubBastionSubnet" -> "module.Vnet.azurerm_virtual_network.westEurope01Vnet";
   "module.Subnet.azurerm_subnet.ansible01Subnet" -> "module.Vnet.azurerm_virtual_network.westEurope01Vnet";
   "module.Subnet.azurerm_subnet.web02Subnet" -> "module.Vnet.azurerm_virtual_network.eastUS01Vnet";
   "module.Subnet.azurerm_subnet.webApp01Subnet" -> "module.Vnet.azurerm_virtual_network.france01Vnet";
