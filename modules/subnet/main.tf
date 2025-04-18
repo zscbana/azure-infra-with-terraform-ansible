@@ -14,6 +14,13 @@ resource "azurerm_subnet" "ansible01Subnet" {
   address_prefixes     = ["172.0.1.0/24"]
 }
 
+resource "azurerm_subnet" "HubBastionSubnet" {
+  name                 = "AzureBastionSubnet"
+  resource_group_name  = var.hubWestEurope01RGName
+  virtual_network_name = var.westEurope01VnetName
+  address_prefixes     = ["172.0.2.0/24"]
+}
+
 # East Us Subnets
 
 resource "azurerm_subnet" "web02Subnet" {

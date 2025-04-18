@@ -15,3 +15,12 @@ resource "azurerm_public_ip" "EastUSLoadBalancerPubIP" {
   sku       = "Standard"
   sku_tier  = "Regional"
 }
+
+resource "azurerm_public_ip" "HubBastionIP" {
+  name                = "HubBastionIP"
+  location            = var.hubWestEurope01RGLocation
+  resource_group_name = var.hubWestEurope01RGName
+  allocation_method   = "Static"
+  sku                 = "Standard"
+  sku_tier  = "Regional"
+}

@@ -99,9 +99,11 @@ module "Vms" {
 module "Ips" {
   source = "./modules/public_ip"
 
+  hubWestEurope01RGName = module.Resource_Group.hubWestEurope01RGName
   france01RGName        = module.Resource_Group.france01RGName
   eastUS01RGName        = module.Resource_Group.eastUS01RGName
 
+  hubWestEurope01RGLocation = module.Resource_Group.hubWestEurope01RGLocation
   france01RGLocation        = module.Resource_Group.france01RGLocation
   eastUS01RGLocation        = module.Resource_Group.eastUS01RGLocation
 }
@@ -126,4 +128,14 @@ module "LB" {
   webapp02NIID = module.nic.webapp02NIID
   webapp03NIID = module.nic.webapp03NIID
   webapp04NIID = module.nic.webapp04NIID
+}
+
+module "HubBastion" {
+  source = "./modules/bastion"
+
+  hubWestEurope01RGName = module.Resource_Group.hubWestEurope01RGName
+  hubWestEurope01RGLocation = module.Resource_Group.hubWestEurope01RGLocation
+
+  HubBastionSubnetID = module.Subnet.HubBastionSubnetID
+  HubBastionIPID = module.Ips.HubBastionIPID
 }
