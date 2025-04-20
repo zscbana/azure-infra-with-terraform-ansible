@@ -1,0 +1,19 @@
+server {
+    listen 80;
+    listen [::]:80;
+    
+    root {{ html_location }};
+    index index.html;
+
+    server_name {{ server_name }};
+
+    location / {
+        try_files $uri $uri/ ahs=404;
+    }
+
+    location /health {
+        access_log off;
+        return 200 'Healthy';
+        add_header Content-Type text/plain;
+    }
+}

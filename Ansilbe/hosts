@@ -1,0 +1,33 @@
+web01 ansible_host=10.0.1.4
+web02 ansible_host=10.0.1.5
+web03 ansible_host=192.168.2.4
+web04 ansible_host=192.168.2.5
+test01 ansible_host=192.168.185.137
+
+[test]
+test01
+
+[test:vars]
+ansible_connection=ssh
+ansible_user=test
+ansible_ssh_private_key_file=~/.ssh/id_rsa
+
+[France]
+web01
+
+[France:vars]
+ansible_connect=ssh
+ansible_user=demoadmin
+ansible_private_key_file=~/.ssh/id_rsa
+
+[EastUS]
+web02
+
+[EastUS:vars]
+ansible_connect=ssh
+ansible_user=demoadmin
+ansible_private_key_file=~/.ssh/id_rsa
+
+[AllRegions:children]
+France
+EastUS

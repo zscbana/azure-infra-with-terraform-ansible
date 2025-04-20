@@ -1,0 +1,6 @@
+---
+- name: Nginx Installation 
+  hosts: AllRegions
+  become: true
+  roles:
+    - nginx-deployment-role
