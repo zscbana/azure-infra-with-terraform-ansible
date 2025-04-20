@@ -2,7 +2,7 @@
 - name: Copy nginx01 packages directory to hosts
   ansible.builtin.copy:
     src: files/nginx01
-    dest: /tmp/nginx01
+    dest: /tmp
     mode: 0755
 
 - name: Install all .deb packages with dpkg

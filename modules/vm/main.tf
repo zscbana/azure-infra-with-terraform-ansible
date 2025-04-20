@@ -19,9 +19,9 @@ resource "azurerm_linux_virtual_machine" "webapp01vm" {
 
   source_image_reference {
     publisher = "Canonical"
-    offer     = "0001-com-ubuntu-server-jammy"
-    sku       = "22_04-lts"
+    offer     = "ubuntu-24_04-lts"
     version   = "latest"
+    sku       = "ubuntu-pro"
   }
 }
 
@@ -44,9 +44,9 @@ resource "azurerm_linux_virtual_machine" "webapp02vm" {
 
   source_image_reference {
     publisher = "Canonical"
-    offer     = "0001-com-ubuntu-server-jammy"
-    sku       = "22_04-lts"
+    offer     = "ubuntu-24_04-lts"
     version   = "latest"
+    sku       = "ubuntu-pro"
   }
 }
 
@@ -70,9 +70,9 @@ resource "azurerm_linux_virtual_machine" "webapp03vm" {
 
   source_image_reference {
     publisher = "Canonical"
-    offer     = "0001-com-ubuntu-server-jammy"
-    sku       = "22_04-lts"
+    offer     = "ubuntu-24_04-lts"
     version   = "latest"
+    sku       = "ubuntu-pro"
   }
 }
 
@@ -95,9 +95,9 @@ resource "azurerm_linux_virtual_machine" "webapp04vm" {
 
   source_image_reference {
     publisher = "Canonical"
-    offer     = "0001-com-ubuntu-server-jammy"
-    sku       = "22_04-lts"
+    offer     = "ubuntu-24_04-lts"
     version   = "latest"
+    sku       = "ubuntu-pro"
   }
 }
 
@@ -122,8 +122,8 @@ resource "azurerm_linux_virtual_machine" "anssible01vm" {
 
   source_image_reference {
     publisher = "Canonical"
-    offer     = "0001-com-ubuntu-server-jammy"
-    sku       = "22_04-lts"
+    offer     = "ubuntu-24_04-lts"
     version   = "latest"
+    sku       = "ubuntu-pro"
   }
 }
