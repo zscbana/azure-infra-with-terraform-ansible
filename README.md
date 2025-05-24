@@ -1,6 +1,6 @@
 # 🌐 Azure Global Infrastructure with Terraform & Ansible
-⚠️ Note: At the start, I mistakenly began creating resources directly instead of modularizing them. After researching best practices, I refactored the project using a modular Terraform architecture for scalability, clarity, and reuse. This evolution reflects my learning process and my commitment to clean infrastructure-as-code.
-
+⚠️ Note: At the beginning of this project, resources were created directly without modules. After researching best practices, I refactored the codebase into a modular structure to improve clarity, scalability, and reusability.
+This transition reflects a growth in understanding Terraform best practices and clean infrastructure design.
 
 ## 📖 Overview
 This project automates the deployment of a **multi-region Azure infrastructure** using **Terraform** and configures the environment using **Ansible**.  
