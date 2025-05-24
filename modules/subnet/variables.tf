@@ -1,11 +1,14 @@
-# RG Vars
-variable "hubWestEurope01RGName" {}
-variable "france01RGName" {}
-variable "eastUS01RGName" {}
+variable "rg" {
+  type = string
+}
+variable "name" {
+  type = string
+}
 
+variable "vnet_name" {
+  type = string
+}
 
-
-# Vnet var
-variable "westEurope01VnetName" {}
-variable "france01VnetName" {}
-variable "eastUS01VnetName" {}
+variable "address_prefixes" {
+  type = list(string)
+}

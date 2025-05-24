@@ -1,7 +1,20 @@
-variable "hubWestEurope01RGName" {}
+variable "location" {
+  type = string
+}
 
-variable "hubWestEurope01RGLocation" {}
+variable "rg" {
+  type = string
+}
 
-variable "HubBastionSubnetID" {}
+variable "sku" {
+  type = string
+  default = "Basic"
+}
 
-variable "HubBastionIPID" {}
+variable "subnet_id" {
+  type = string
+}
+
+variable "public_ip_address_id" {
+  type = string
+}

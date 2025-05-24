@@ -1,3 +1,18 @@
+variable "vm_name" {
+  type = string
+}
+variable "rg" {
+  type = string
+}
+variable "location" {
+  type = string
+}
+
+variable "vm_size" {
+  type    = string
+  default = "Standard_B1s"
+}
+
 variable "username" {
   description = "Admin username"
   type        = string
@@ -9,17 +24,12 @@ variable "password" {
   sensitive   = true
 }
 
-variable "hubWestEurope01RGName" {}
-variable "france01RGName" {}
-variable "eastUS01RGName" {}
+variable "disable_password_authentication" {
+  type = bool
+  default = false
+}
 
-variable "hubWestEurope01RGLocation" {}
-variable "france01RGLocation" {}
-variable "eastUS01RGLocation" {}
-
-
-variable "ansible01NIID" {}
-variable "webapp01NIID" {}
-variable "webapp02NIID" {}
-variable "webapp03NIID" {}
-variable "webapp04NIID" {}
+variable "nic_id" {
+  description = "Network Interface ID for the VM"
+  type        = string
+}

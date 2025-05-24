@@ -1,12 +1,28 @@
-variable "hubWestEurope01RGName" {}
-variable "france01RGName" {}
-variable "eastUS01RGName" {}
+variable "name" {
+  type = string
+}
+variable "rg" {
+  type = string
+}
+variable "location" {
+  type = string
+}
 
-variable "hubWestEurope01RGLocation" {}
-variable "france01RGLocation" {}
-variable "eastUS01RGLocation" {}
+variable "security_rules" {
+  type = list(object({
+    name                       = string
+    priority                   = number
+    direction                  = string
+    access                     = string
+    protocol                   = string
+    source_port_range          = string
+    destination_port_range     = string
+    source_address_prefix      = string
+    destination_address_prefix = string
+  }))
+}
 
-variable "webApp01SubnetId" {}
-variable "ansible01SubnetId" {}
-variable "web02SubnetId" {}
-
+variable "subnet_id" {
+  type = string
+  default = null
+}

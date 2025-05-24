@@ -1,7 +1,22 @@
-variable "hubWestEurope01RGName" {}
-variable "france01RGName" {}
-variable "eastUS01RGName" {}
+variable "name" {
+  type = string
+}
+variable "rg" {
+  type = string
+}
+variable "location" {
+    type = string
+}
 
-variable "hubWestEurope01RGLocation" {}
-variable "france01RGLocation" {}
-variable "eastUS01RGLocation" {}
+variable "allocation_method" {
+  type = string
+  default = "Static"
+}
+variable "sku" {
+  type = string
+  default = "Standard"
+}
+variable "sku_tier" {
+  type = string
+  default = "Regional"
+}

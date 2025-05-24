@@ -1,21 +1,7 @@
-output "FranceLoadBalancerPubIPID" {
-  value = azurerm_public_ip.FranceLoadBalancerPubIP.id
-}
-output "EastUSLoadBalancerPubIPID" {
-  value = azurerm_public_ip.EastUSLoadBalancerPubIP.id
-}
-output "HubBastionIPID" {
-  value = azurerm_public_ip.HubBastionIP.id
+output "public_ip_id" {
+  value = azurerm_public_ip.PubIp.id
 }
 
-
-output "FranceLoadBalancerPubIP" {
-  value = azurerm_public_ip.FranceLoadBalancerPubIP.ip_address
+output "public_ip_address" {
+  value = azurerm_public_ip.PubIp.ip_address
 }
-output "EastUSLoadBalancerPubIP" {
-  value = azurerm_public_ip.EastUSLoadBalancerPubIP.ip_address
-}
-output "HubBastionIP" {
-  value = azurerm_public_ip.HubBastionIP.ip_address
-}
-

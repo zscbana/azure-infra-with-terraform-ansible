@@ -1,19 +1,5 @@
-variable "hubWestEurope01RGName" {}
-variable "france01RGName" {}
-variable "eastUS01RGName" {}
-
-variable "hubWestEurope01RGLocation" {}
-variable "france01RGLocation" {}
-variable "eastUS01RGLocation" {}
-
-variable "FranceLoadBalancerPubIPID" {}
-variable "EastUSLoadBalancerPubIPID" {}
-
-variable "FranceLoadBalancerPubIP" {}
-variable "EastUSLoadBalancerPubIP" {}
-
-variable "webapp01NIID" {}
-variable "webapp02NIID" {}
-
-variable "webapp03NIID" {}
-variable "webapp04NIID" {}
+variable "lb_name" {}
+variable "resource_group_name" {}
+variable "location" {}
+variable "frontend_name" {}
+variable "public_ip_id" {}

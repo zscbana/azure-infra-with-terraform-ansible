@@ -1,12 +1,28 @@
-variable "hubWestEurope01RGName" {}
-variable "france01RGName" {}
-variable "eastUS01RGName" {}
+variable "name" {
+  type = string
+}
 
-variable "hubWestEurope01RGLocation" {}
-variable "france01RGLocation" {}
-variable "eastUS01RGLocation" {}
+variable "location" {
+  type = string
+}
 
-variable "webApp01SubnetId" {}
-variable "ansible01SubnetId" {}
-variable "web02SubnetId" {}
+variable "rg" {
+    type = string
+}
+variable "subnet_id" {
+  type = string
+}
 
+variable "private_ip_address_allocation" {
+  type = string
+  default = "Dynamic"
+}
+
+variable "private_ip_address" {
+  type = string
+}
+
+variable "ip_configuration_name" {
+  type = string
+  default = "internal"
+}

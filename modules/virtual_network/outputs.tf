@@ -1,9 +1,7 @@
-output "westEurope01VnetName" {
-  value = azurerm_virtual_network.westEurope01Vnet.name
+output "vnet_name" {
+  value = azurerm_virtual_network.Vnet.name
 }
-output "france01VnetName" {
-  value = azurerm_virtual_network.france01Vnet.name
-}
-output "eastUS01VnetName" {
-  value = azurerm_virtual_network.eastUS01Vnet.name
+
+output "vnet_id" {
+  value = azurerm_virtual_network.Vnet.id
 }

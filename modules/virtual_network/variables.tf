@@ -1,7 +1,12 @@
-variable "hubWestEurope01RGName" {}
-variable "france01RGName" {}
-variable "eastUS01RGName" {}
-
-variable "hubWestEurope01RGLocation" {}
-variable "france01RGLocation" {}
-variable "eastUS01RGLocation" {}
+variable "name" {
+  type = string
+}
+variable "rg" {
+  type = string
+}
+variable "location" {
+  type = string
+}
+variable "address_space" {
+    type = list(string)
+}
